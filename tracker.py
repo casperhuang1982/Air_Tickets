@@ -145,11 +145,13 @@ def matches_airline(offer, airlines):
     同時比對航空代碼、航班號前綴與中文名稱。"""
     airline = offer.get("airline") or ""
     flights = [f.strip() for f in (offer.get("flight_number") or "").split(",")]
+    # Google 航班號為「BR 186」可直接比對代碼；Travelpayouts 的 airline 就是代碼
+    has_codes = any(" " in f for f in flights)
     for a in airlines:
-        if airline == a["code"] or (a.get("name") and a["name"] in airline):
+        if airline == a["code"] or any(f.startswith(a["code"] + " ") for f in flights):
             return True
-        # Google 航班號為「BR 186」；Travelpayouts 的 flight_number 只有數字，由 airline 判斷
-        if any(f.startswith(a["code"] + " ") for f in flights):
+        # 沒有代碼可比對時才用名稱，避免「亞洲航空」誤傷「泰國亞洲航空」
+        if not has_codes and a.get("name") and a["name"] in airline:
             return True
     return False
 
