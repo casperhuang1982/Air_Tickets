@@ -1,13 +1,25 @@
 {
- "updated_at": "2026-09-18T13:49+08:00",
+ "updated_at": "2026-09-18T13:54+08:00",
  "currency": "twd",
  "routes": [
+  {
+   "key": "TPE-TYO-2027-summer",
+   "code": "TYO",
+   "name": "東京",
+   "month": "2027-summer",
+   "label": "2027 暑假 7/29–8/5",
+   "kind": "trip",
+   "target_price": null,
+   "offers": []
+  },
   {
    "key": "TPE-TYO-2026-10",
    "code": "TYO",
    "name": "東京",
    "month": "2026-10",
-   "target_price": 11000,
+   "label": "2026-10",
+   "kind": "month",
+   "target_price": 6000,
    "offers": [
     {
      "price": 6795,
@@ -126,7 +138,9 @@
    "code": "TYO",
    "name": "東京",
    "month": "2026-11",
-   "target_price": 11000,
+   "label": "2026-11",
+   "kind": "month",
+   "target_price": 6000,
    "offers": [
     {
      "price": 7282,
@@ -201,7 +215,9 @@
    "code": "TYO",
    "name": "東京",
    "month": "2026-12",
-   "target_price": 11000,
+   "label": "2026-12",
+   "kind": "month",
+   "target_price": 6000,
    "offers": [
     {
      "price": 7372,
@@ -261,11 +277,426 @@
    ]
   },
   {
+   "key": "TPE-TYO-2027-01",
+   "code": "TYO",
+   "name": "東京",
+   "month": "2027-01",
+   "label": "2027-01",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": [
+    {
+     "price": 7975,
+     "airline": "MM",
+     "flight_number": "628",
+     "destination_airport": "NRT",
+     "departure_at": "2027-01-06T17:15:00+08:00",
+     "return_at": "2027-01-13T08:30:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE0601TYO13011?t=GK17992557001799271000000195TPENRT17998290001799841000000260NRTTPE_16f9338b7f185175d1d846c4adb39dc7_21147&search_date=14092026&expected_price_uuid=01a09f8c-72ba-8030-6c6b-d04cd2a3e762&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=SvlYes5VylfiMhSgTIYClQ&expected_price_source=share&expected_price_currency=twd&expected_price=7975"
+    },
+    {
+     "price": 9055,
+     "airline": "TR",
+     "flight_number": "874",
+     "destination_airport": "NRT",
+     "departure_at": "2027-01-08T14:00:00+08:00",
+     "return_at": "2027-01-12T08:30:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE0801TYO12011?t=GK17994168001799431200000180TPENRT17997426001799754600000260NRTTPE_d6ca982ba064b1bffe979a9d8b7111c1_24011&search_date=14092026&expected_price_uuid=01a09f96-83a5-8030-287f-f409f8a18338&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=AQlS44AmE41yN1OPvPkRTQ&expected_price_source=share&expected_price_currency=twd&expected_price=9055"
+    },
+    {
+     "price": 10156,
+     "airline": "SL",
+     "flight_number": "394",
+     "destination_airport": "NRT",
+     "departure_at": "2027-01-18T13:00:00+08:00",
+     "return_at": "2027-01-22T08:30:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1801TYO22011?t=GK18002772001800292500000195TPENRT18006066001800618600000260NRTTPE_288b5ef30584ef20ca0a076b20d964d0_27009&search_date=12092026&expected_price_uuid=01a09431-8def-8030-659d-edbbe1ff94a9&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=2xpzuUzKLoruVZmvGazAxw&expected_price_source=share&expected_price_currency=twd&expected_price=10156"
+    },
+    {
+     "price": 10621,
+     "airline": "SL",
+     "flight_number": "394",
+     "destination_airport": "NRT",
+     "departure_at": "2027-01-15T12:10:00+08:00",
+     "return_at": "2027-01-21T08:30:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1501TYO21011?t=GK18000150001800030300000195TPENRT18005202001800532200000260NRTTPE_55e9e7be2c74968b2f42cc957cba22f9_28277&search_date=13092026&expected_price_uuid=01a09a2a-fe33-8040-69bf-fbf14a200f9e&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=Dn7xmi7UZwuWVIBTUozukg&expected_price_source=share&expected_price_currency=twd&expected_price=10621"
+    },
+    {
+     "price": 10670,
+     "airline": "TR",
+     "flight_number": "874",
+     "destination_airport": "NRT",
+     "departure_at": "2027-01-14T14:00:00+08:00",
+     "return_at": "2027-01-20T22:25:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1401TYO20011?t=GK17999352001799949600000180TPENRT18004839001800495000000245NRTTPE_9b3d8fb398694ad14f70e02182ed7059_28409&search_date=13092026&expected_price_uuid=01a09a1e-eeaf-8040-a884-b285c92bb5c1&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=Ekoosyc4j7gKad5HApAX1w&expected_price_source=share&expected_price_currency=twd&expected_price=10670"
+    },
+    {
+     "price": 11118,
+     "airline": "GK",
+     "flight_number": "016",
+     "destination_airport": "NRT",
+     "departure_at": "2027-01-19T16:50:00+08:00",
+     "return_at": "2027-01-26T08:30:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1901TYO26011?t=GK18003774001800392400000190TPENRT18009522001800964200000260NRTTPE_757148f02aee64731d6b74326424a911_29388&search_date=17092026&expected_price_uuid=01a0ad45-77cb-8030-a5fe-6eca54bc1b87&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=AghSRaFAi5cdxKMVWvgyPg&expected_price_source=share&expected_price_currency=twd&expected_price=11118"
+    },
+    {
+     "price": 12400,
+     "airline": "VZ",
+     "flight_number": "568",
+     "destination_airport": "NRT",
+     "departure_at": "2027-01-24T14:45:00+08:00",
+     "return_at": "2027-01-31T14:00:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE2401TYO31011?t=MM18008019001800887400001365TPEOKANRT18014040001801472100001195NRTOKATPE_379a2bb8add09a19964597575429832e_33014&search_date=13092026&expected_price_uuid=01a09a0c-f2db-8030-68c1-4213acaaee35&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=rNLkJpn-SHasiMe2S4aDSw&expected_price_source=share&expected_price_currency=twd&expected_price=12400"
+    },
+    {
+     "price": 13449,
+     "airline": "OZ",
+     "flight_number": "714",
+     "destination_airport": "HND",
+     "departure_at": "2027-01-28T17:05:00+08:00",
+     "return_at": "2027-02-04T08:30:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE2801TYO04021?t=OZ18011559001801178700000320TPEICNHND18017298001801756500000505NRTICNTPE_b4532a9eb8a8f9a3ca2ad89f963bd9df_35806&search_date=13092026&expected_price_uuid=01a09b1a-9702-8030-ef5b-29d369d9c3d2&static_fare_key=TY%7CP0%7CH0%7CL1_1_23%7CCH0%7CR0%7CTBC1&itinerary_key=RT9Wbvoi4whtoUNxYnRmZg&expected_price_source=share&expected_price_currency=twd&expected_price=13449"
+    }
+   ]
+  },
+  {
+   "key": "TPE-TYO-2027-02",
+   "code": "TYO",
+   "name": "東京",
+   "month": "2027-02",
+   "label": "2027-02",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": [
+    {
+     "price": 10032,
+     "airline": "IT",
+     "flight_number": "202",
+     "destination_airport": "NRT",
+     "departure_at": "2027-02-19T13:30:00+08:00",
+     "return_at": "2027-02-24T05:00:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1902TYO24021?t=IT18030438001803058200000180TPENRT18034452001803455700000235HNDTPE_841d4492caf72b7529775c7290aa2923_26492&search_date=15092026&expected_price_uuid=01a0a49f-780a-8040-63fa-c78febe7c222&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=qPlViTnqCo2LFYExCIwraA&expected_price_source=share&expected_price_currency=twd&expected_price=10032"
+    },
+    {
+     "price": 10632,
+     "airline": "GK",
+     "flight_number": "016",
+     "destination_airport": "NRT",
+     "departure_at": "2027-02-13T16:45:00+08:00",
+     "return_at": "2027-02-17T05:00:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1302TYO17021?t=IT18025371001802552100000190TPENRT18028404001802850900000235HNDTPE_bce96f839a9c6bd5c7475cb901ae5b61_28358&search_date=11092026&expected_price_uuid=01a09064-3e94-8030-e462-9e971a4d7c26&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=_uIQ04ahmFBEGRsyR7VAig&expected_price_source=share&expected_price_currency=twd&expected_price=10632"
+    },
+    {
+     "price": 10803,
+     "airline": "TR",
+     "flight_number": "874",
+     "destination_airport": "NRT",
+     "departure_at": "2027-02-16T14:00:00+08:00",
+     "return_at": "2027-02-22T08:30:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1602TYO22021?t=GK18027864001802800800000180TPENRT18032850001803297000000260NRTTPE_445c47d7991eb7508ec1eb06a9e12abe_28761&search_date=13092026&expected_price_uuid=01a09a63-c3a7-8040-a9f0-d0e4b45b67ab&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=Yikt5oan3befYo8v9l-rZA&expected_price_source=share&expected_price_currency=twd&expected_price=10803"
+    },
+    {
+     "price": 12263,
+     "airline": "MM",
+     "flight_number": "628",
+     "destination_airport": "NRT",
+     "departure_at": "2027-02-26T17:15:00+08:00",
+     "return_at": "2027-03-03T12:55:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE2602TYO03031?t=MM18036621001803677400000195TPENRT18040785001804090500000260NRTTPE_40eba2a4f7ef756f841849d4fffba8b5_32427&search_date=16092026&expected_price_uuid=01a0aae5-c13b-8030-abf2-78fc75bd22f1&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=W8w5vOnrG_Ig8tv7zWBtuQ&expected_price_source=share&expected_price_currency=twd&expected_price=12263"
+    },
+    {
+     "price": 12469,
+     "airline": "TR",
+     "flight_number": "874",
+     "destination_airport": "NRT",
+     "departure_at": "2027-02-21T14:00:00+08:00",
+     "return_at": "2027-02-28T05:00:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE2102TYO28021?t=IT18032184001803232800000180TPENRT18037908001803801300000235HNDTPE_c367546e08bb09b2dafed276cb2b3a88_33162&search_date=14092026&expected_price_uuid=01a0a0e5-3923-8030-6704-607bb1379d76&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=-Q6Klh3MmAiruf61CxweJA&expected_price_source=share&expected_price_currency=twd&expected_price=12469"
+    },
+    {
+     "price": 13798,
+     "airline": "OZ",
+     "flight_number": "712",
+     "destination_airport": "NRT",
+     "departure_at": "2027-02-11T11:05:00+08:00",
+     "return_at": "2027-02-15T13:20:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE1102TYO15021?t=OZ18023439001802377200000495TPEICNNRT18026976001802771400001290NRTICNTPE_c09d99a7ebabdfdf56cc61fac32e976f_36521&search_date=15092026&expected_price_uuid=01a0a48a-0eb5-8030-2401-5b361da87660&static_fare_key=TY%7CP0%7CH0%7CL1_1_23%7CCH0%7CR0%7CTBC1&itinerary_key=H9eNlaynPRs776A-V_nETA&expected_price_source=share&expected_price_currency=twd&expected_price=13798"
+    },
+    {
+     "price": 16501,
+     "airline": "OZ",
+     "flight_number": "714",
+     "destination_airport": "NRT",
+     "departure_at": "2027-02-07T17:05:00+08:00",
+     "return_at": "2027-02-14T08:30:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE0702TYO14021?t=OZ18020199001802118000001575TPEICNNRT18025938001802685000001580NRTICNTPE_860bc0c99d56e0573a5f299a6d461e0d_43729&search_date=17092026&expected_price_uuid=01a0ae69-9fdd-8030-a59c-b28a4c3a192e&static_fare_key=TY%7CP1%7CH1%7CL1_1_23%7CCH0%7CR0%7CTBC1&itinerary_key=b6IJUhe4volB53cefmA61A&expected_price_source=share&expected_price_currency=twd&expected_price=16501"
+    },
+    {
+     "price": 17236,
+     "airline": "OZ",
+     "flight_number": "714",
+     "destination_airport": "NRT",
+     "departure_at": "2027-02-06T17:05:00+08:00",
+     "return_at": "2027-02-12T13:20:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE0602TYO12021?t=OZ18019335001802031600001575TPEICNNRT18024384001802512200001290NRTICNTPE_0d9850a88b0d08889a7f38b1f812748f_45822&search_date=11092026&expected_price_uuid=01a08fa4-5b84-8040-6d9f-190d871da033&static_fare_key=TY%7CP0%7CH0%7CL1_1_23%7CCH0%7CR0%7CTBC1&itinerary_key=9xHxsbNV0RNLWxEZEPqqwg&expected_price_source=share&expected_price_currency=twd&expected_price=17236"
+    },
+    {
+     "price": 18937,
+     "airline": "OZ",
+     "flight_number": "714",
+     "destination_airport": "NRT",
+     "departure_at": "2027-02-06T17:05:00+08:00",
+     "return_at": "2027-02-10T19:35:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE0602TYO10021?t=OZ18019335001802022900001430TPEICNNRT18022881001802361300001280NRTICNTPE_c825d93814925a182b19b1317f10b5bd_50400&search_date=14092026&expected_price_uuid=01a09e76-bfdd-8030-a4be-190651bf8efc&static_fare_key=TY%7CP0%7CH0%7CL1_1_23%7CCH0%7CR0%7CTBC1&itinerary_key=6YGv-bGtuATLWSPj47wUOg&expected_price_source=share&expected_price_currency=twd&expected_price=18937"
+    }
+   ]
+  },
+  {
+   "key": "TPE-TYO-2027-03",
+   "code": "TYO",
+   "name": "東京",
+   "month": "2027-03",
+   "label": "2027-03",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": [
+    {
+     "price": 7753,
+     "airline": "GK",
+     "flight_number": "016",
+     "destination_airport": "NRT",
+     "departure_at": "2027-03-11T16:45:00+08:00",
+     "return_at": "2027-03-17T05:00:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1103TYO17031?t=IT18047835001804798500000190TPENRT18052596001805270100000235HNDTPE_9ee412ab5e85fa1634373e9c79b9d218_20641&search_date=13092026&expected_price_uuid=01a09b53-5a17-8030-ec9e-8106136b2907&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=gZAbuUpmRDcOUSkrL_6Lbg&expected_price_source=share&expected_price_currency=twd&expected_price=7753"
+    },
+    {
+     "price": 8720,
+     "airline": "GK",
+     "flight_number": "014",
+     "destination_airport": "NRT",
+     "departure_at": "2027-03-12T12:50:00+08:00",
+     "return_at": "2027-03-16T05:00:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1203TYO16031?t=IT18048558001804870500000185TPENRT18051732001805183700000235HNDTPE_03c0dc8f2930bda418a666f57fa548f2_23120&search_date=17092026&expected_price_uuid=01a0b0b6-4818-8040-adec-8220e0101f9b&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=jVRsUzi6d_f_JWMGPWbbPw&expected_price_source=share&expected_price_currency=twd&expected_price=8720"
+    },
+    {
+     "price": 9147,
+     "airline": "GK",
+     "flight_number": "014",
+     "destination_airport": "NRT",
+     "departure_at": "2027-03-13T12:50:00+08:00",
+     "return_at": "2027-03-20T22:05:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1303TYO20031?t=MM18049422001804956900000185TPENRT18055803001805592300000260NRTTPE_9b8e806cee00e6142013057d2d3b8601_24309&search_date=17092026&expected_price_uuid=01a0af38-a38d-8030-af08-76296d046d91&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=ic5-wvXJDPJMHg0qOT5JSA&expected_price_source=share&expected_price_currency=twd&expected_price=9147"
+    },
+    {
+     "price": 9430,
+     "airline": "GK",
+     "flight_number": "014",
+     "destination_airport": "NRT",
+     "departure_at": "2027-03-10T12:50:00+08:00",
+     "return_at": "2027-03-13T05:00:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1003TYO13031?t=IT18046830001804697700000185TPENRT18049140001804924500000235HNDTPE_b259f5918503c6a57217e713f77001da_25068&search_date=17092026&expected_price_uuid=01a0af84-6fe5-8030-257b-9b518845e2a6&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=qtmleZThebcmsMWoOcjC5Q&expected_price_source=share&expected_price_currency=twd&expected_price=9430"
+    },
+    {
+     "price": 9443,
+     "airline": "GK",
+     "flight_number": "014",
+     "destination_airport": "NRT",
+     "departure_at": "2027-03-14T12:50:00+08:00",
+     "return_at": "2027-03-17T05:00:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1403TYO17031?t=IT18050286001805043300000185TPENRT18052596001805270100000235HNDTPE_d02d8c83c6b6cd0eebc2f5255595af59_25102&search_date=17092026&expected_price_uuid=01a0af7b-a922-8030-ef3b-ffed49c6616f&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=qtmleZThebcmsMWoOcjC5Q&expected_price_source=share&expected_price_currency=twd&expected_price=9442"
+    },
+    {
+     "price": 9905,
+     "airline": "GK",
+     "flight_number": "014",
+     "destination_airport": "NRT",
+     "departure_at": "2027-03-02T12:50:00+08:00",
+     "return_at": "2027-03-08T08:30:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE0203TYO08031?t=GK18039918001804006500000185TPENRT18044946001804506600000260NRTTPE_743c5ccd29e680e2d2a19c4bafec70db_26370&search_date=13092026&expected_price_uuid=01a09b69-fc43-8030-a95d-d5ac902c4c7f&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=W6PNhMkCNmbP7hH2b84Ifg&expected_price_source=share&expected_price_currency=twd&expected_price=9905"
+    }
+   ]
+  },
+  {
+   "key": "TPE-TYO-2027-04",
+   "code": "TYO",
+   "name": "東京",
+   "month": "2027-04",
+   "label": "2027-04",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": [
+    {
+     "price": 13498,
+     "airline": "TR",
+     "flight_number": "866",
+     "destination_airport": "NRT",
+     "departure_at": "2027-04-11T06:45:00+08:00",
+     "return_at": "2027-04-18T22:40:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1104TYO18041?t=GK18074259001807442100000210TPENRT18080880001808098200000230NRTTPE_bfc66bd8acb7cf9d54f9e9f0c936b1a3_35741&search_date=14092026&expected_price_uuid=01a09eed-619e-8050-eedc-0acd15284e8b&static_fare_key=TY%7CP1_JW%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=bHYQb-opw_LGdZzX_-VwTg&expected_price_source=share&expected_price_currency=twd&expected_price=13498"
+    },
+    {
+     "price": 14524,
+     "airline": "SL",
+     "flight_number": "394",
+     "destination_airport": "NRT",
+     "departure_at": "2027-04-04T12:10:00+08:00",
+     "return_at": "2027-04-07T22:40:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE0404TYO07041?t=GK18068406001806855600000190TPENRT18071376001807147800000230NRTTPE_da486124044079baf99f0684070406f7_38624&search_date=12092026&expected_price_uuid=01a09746-54e4-8030-ae2a-7098a94c5273&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=4OTH3CemD8T-P60k46fuKg&expected_price_source=share&expected_price_currency=twd&expected_price=14524"
+    },
+    {
+     "price": 16558,
+     "airline": "OZ",
+     "flight_number": "714",
+     "destination_airport": "NRT",
+     "departure_at": "2027-04-03T17:10:00+08:00",
+     "return_at": "2027-04-07T19:45:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE0304TYO07041?t=OZ18067722001806835800001000TPEICNNRT18071271001807179900000940NRTICNTPE_77a866674f3c7aa7b9e6a86332731e5e_44034&search_date=12092026&expected_price_uuid=01a094e5-491e-8030-2dfc-362206386a03&static_fare_key=TY%7CP0%7CH1%7CL1_1_23%7CCH0%7CR0%7CTBC1&itinerary_key=xey-WRoAzssfma-ztd75xQ&expected_price_source=share&expected_price_currency=twd&expected_price=16558"
+    }
+   ]
+  },
+  {
+   "key": "TPE-TYO-2027-05",
+   "code": "TYO",
+   "name": "東京",
+   "month": "2027-05",
+   "label": "2027-05",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": []
+  },
+  {
+   "key": "TPE-TYO-2027-06",
+   "code": "TYO",
+   "name": "東京",
+   "month": "2027-06",
+   "label": "2027-06",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": [
+    {
+     "price": 9457,
+     "airline": "TR",
+     "flight_number": "874",
+     "destination_airport": "NRT",
+     "departure_at": "2027-06-17T15:30:00+08:00",
+     "return_at": "2027-06-23T12:30:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1706TYO23061?t=TR18132462001813262400000210TPENRT18137538001813763400000220NRTTPE_d9a11400f62f363a62efaccacdfc9c04_25150&search_date=12092026&expected_price_uuid=01a0950f-8100-8040-ae96-0ba0ab09c6df&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=ifA-xkIEjTNbi5VXetaJHg&expected_price_source=share&expected_price_currency=twd&expected_price=9457"
+    },
+    {
+     "price": 9683,
+     "airline": "TR",
+     "flight_number": "874",
+     "destination_airport": "NRT",
+     "departure_at": "2027-06-14T15:30:00+08:00",
+     "return_at": "2027-06-21T12:30:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1406TYO21061?t=TR18129870001813003200000210TPENRT18135810001813590600000220NRTTPE_dc452ce416dd9955f9ac7f7dc610a1f3_25751&search_date=13092026&expected_price_uuid=01a098df-009d-8040-60f8-a0fa92dd2b46&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=ciuCq3miT6a3OszqAHF1bQ&expected_price_source=share&expected_price_currency=twd&expected_price=9683"
+    }
+   ]
+  },
+  {
+   "key": "TPE-TYO-2027-07",
+   "code": "TYO",
+   "name": "東京",
+   "month": "2027-07",
+   "label": "2027-07",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": []
+  },
+  {
+   "key": "TPE-TYO-2027-08",
+   "code": "TYO",
+   "name": "東京",
+   "month": "2027-08",
+   "label": "2027-08",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": []
+  },
+  {
+   "key": "TPE-TYO-2027-09",
+   "code": "TYO",
+   "name": "東京",
+   "month": "2027-09",
+   "label": "2027-09",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": []
+  },
+  {
+   "key": "TPE-OSA-2027-summer",
+   "code": "OSA",
+   "name": "大阪",
+   "month": "2027-summer",
+   "label": "2027 暑假 7/29–8/5",
+   "kind": "trip",
+   "target_price": null,
+   "offers": []
+  },
+  {
    "key": "TPE-OSA-2026-10",
    "code": "OSA",
    "name": "大阪",
    "month": "2026-10",
-   "target_price": 10000,
+   "label": "2026-10",
+   "kind": "month",
+   "target_price": 6000,
    "offers": [
     {
      "price": 6930,
@@ -384,7 +815,9 @@
    "code": "OSA",
    "name": "大阪",
    "month": "2026-11",
-   "target_price": 10000,
+   "label": "2026-11",
+   "kind": "month",
+   "target_price": 6000,
    "offers": [
     {
      "price": 8164,
@@ -437,7 +870,9 @@
    "code": "OSA",
    "name": "大阪",
    "month": "2026-12",
-   "target_price": 10000,
+   "label": "2026-12",
+   "kind": "month",
+   "target_price": 6000,
    "offers": [
     {
      "price": 7329,
@@ -453,23 +888,240 @@
    ]
   },
   {
+   "key": "TPE-OSA-2027-01",
+   "code": "OSA",
+   "name": "大阪",
+   "month": "2027-01",
+   "label": "2027-01",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": [
+    {
+     "price": 7267,
+     "airline": "SL",
+     "flight_number": "396",
+     "destination_airport": "KIX",
+     "departure_at": "2027-01-09T09:00:00+08:00",
+     "return_at": "2027-01-14T13:40:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE0901OSA14011?t=SL17994852001799497200000140TPEKIX17999340001799941200000180KIXTPE_340eb077ae99b21b734538ce5d884555_19312&search_date=17092026&expected_price_uuid=01a0af46-e1af-8030-e93a-2c70a2cca783&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=dSFrKC-VO1nt8kcFSbIJqQ&expected_price_source=share&expected_price_currency=twd&expected_price=7267"
+    },
+    {
+     "price": 8095,
+     "airline": "SL",
+     "flight_number": "396",
+     "destination_airport": "KIX",
+     "departure_at": "2027-01-05T09:00:00+08:00",
+     "return_at": "2027-01-11T10:10:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE0501OSA11011?t=MM17991396001799151600000140TPEKIX17996622001799671200000210KIXTPE_7c68869f5c665fa315e7dce9b901b1e8_21452&search_date=17092026&expected_price_uuid=01a0ae76-8a74-8040-aa81-5611754f5d63&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=Bu7yBHJcDLAQ7LJ8rfbIbQ&expected_price_source=share&expected_price_currency=twd&expected_price=8095"
+    },
+    {
+     "price": 8418,
+     "airline": "SL",
+     "flight_number": "396",
+     "destination_airport": "KIX",
+     "departure_at": "2027-01-12T09:00:00+08:00",
+     "return_at": "2027-01-20T13:40:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1201OSA20011?t=SL17997444001799756400000140TPEKIX18004524001800459600000180KIXTPE_53cdb2cade5edb76cd01e268ec6a4328_22411&search_date=13092026&expected_price_uuid=01a09b95-c9e5-8030-6f16-57b973651c44&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=ALnpQiLVBLyQXtEtuM491g&expected_price_source=share&expected_price_currency=twd&expected_price=8418"
+    },
+    {
+     "price": 12804,
+     "airline": "SL",
+     "flight_number": "396",
+     "destination_airport": "KIX",
+     "departure_at": "2027-01-31T09:00:00+08:00",
+     "return_at": "2027-02-08T19:40:00+09:00",
+     "transfers": 0,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE3101OSA08021?t=NU18013860001801398000000140TPEKIX18021156001802164500000875ITMOKATPE_8e286413bee64cd99872408c525f40f8_34016&search_date=14092026&expected_price_uuid=01a09da0-e0a8-8030-a0a8-2d963a09c1e4&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=G4g5yb1rBVoO8GQSAIjPGw&expected_price_source=share&expected_price_currency=twd&expected_price=12804"
+    }
+   ]
+  },
+  {
+   "key": "TPE-OSA-2027-02",
+   "code": "OSA",
+   "name": "大阪",
+   "month": "2027-02",
+   "label": "2027-02",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": [
+    {
+     "price": 14657,
+     "airline": "OZ",
+     "flight_number": "714",
+     "destination_airport": "UKB",
+     "departure_at": "2027-02-07T17:05:00+08:00",
+     "return_at": "2027-02-14T15:00:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE0702OSA14021?t=OZ18020199001802095200001195TPEICNUKB18026172001802685000001190UKBICNTPE_6521bf1c90798af5f1a1b2f00643b20e_38955&search_date=18092026&expected_price_uuid=01a0b275-d8b7-8040-a822-c59245b5a1c5&static_fare_key=TY%7CP0%7CH0%7CL1_1_23%7CCH0%7CR0%7CTBC1&itinerary_key=1S6MvQ0aWzuwr62F7v_PmQ&expected_price_source=share&expected_price_currency=twd&expected_price=14657"
+    },
+    {
+     "price": 14829,
+     "airline": "OZ",
+     "flight_number": "712",
+     "destination_airport": "UKB",
+     "departure_at": "2027-02-07T11:05:00+08:00",
+     "return_at": "2027-02-12T15:00:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE0702OSA12021?t=OZ18019983001802095200001555TPEICNUKB18024444001802512200001190UKBICNTPE_4753e827ab7443b4b2bd4c26947b3087_39153&search_date=16092026&expected_price_uuid=01a0a7ba-add4-8030-a75b-b093d2c105ed&static_fare_key=TY%7CP0%7CH0%7CL1_1_23%7CCH0%7CR0%7CTBC1&itinerary_key=1zIXUS1oVcap0zYn0HckQQ&expected_price_source=share&expected_price_currency=twd&expected_price=14829"
+    },
+    {
+     "price": 17269,
+     "airline": "OZ",
+     "flight_number": "714",
+     "destination_airport": "KIX",
+     "departure_at": "2027-02-06T17:05:00+08:00",
+     "return_at": "2027-02-10T19:40:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE0602OSA10021?t=OZ18019335001802032500001590TPEICNKIX18022884001802337300000875ITMOKATPE_82429c4cb31f630e70eb4eb97bf8a1fc_45925&search_date=12092026&expected_price_uuid=01a093b2-8154-8030-aaaf-0da72c7b0b44&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=GsbSP9T6euDdUTtN4xsupw&expected_price_source=share&expected_price_currency=twd&expected_price=17269"
+    },
+    {
+     "price": 20179,
+     "airline": "PR",
+     "flight_number": "895",
+     "destination_airport": "KIX",
+     "departure_at": "2027-02-04T21:55:00+08:00",
+     "return_at": "2027-02-09T10:05:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE0402OSA09021?t=PR18017781001801814100000540TPEMNLKIX18021675001802206500000710KIXMNLTPE_9d075e9ab3e2433b3bd2bdef190e602c_53637&search_date=17092026&expected_price_uuid=01a0afbd-08dc-8030-2fbb-fc10b6bc417c&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=eazF_jqvhCzI-2UHVNUIxA&expected_price_source=share&expected_price_currency=twd&expected_price=20179"
+    }
+   ]
+  },
+  {
+   "key": "TPE-OSA-2027-03",
+   "code": "OSA",
+   "name": "大阪",
+   "month": "2027-03",
+   "label": "2027-03",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": [
+    {
+     "price": 7243,
+     "airline": "IT",
+     "flight_number": "212",
+     "destination_airport": "KIX",
+     "departure_at": "2027-03-20T14:40:00+08:00",
+     "return_at": "2027-03-25T13:40:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE2003OSA25031?t=SL18055536001805565300000135TPEKIX18059820001805989200000180KIXTPE_d44ed20407e6d5d99848163543d8a1d2_19263&search_date=14092026&expected_price_uuid=01a0a13b-2853-8030-e7db-739b04ca7347&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=SGewmYpbu55QcYSDh-xZGQ&expected_price_source=share&expected_price_currency=twd&expected_price=7243"
+    }
+   ]
+  },
+  {
+   "key": "TPE-OSA-2027-04",
+   "code": "OSA",
+   "name": "大阪",
+   "month": "2027-04",
+   "label": "2027-04",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": [
+    {
+     "price": 12607,
+     "airline": "D7",
+     "flight_number": "378",
+     "destination_airport": "KIX",
+     "departure_at": "2027-04-05T15:40:00+08:00",
+     "return_at": "2027-04-11T20:55:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE0504OSA11041?t=D718069396001806953400000170TPEKIX18074769001807484700000190KIXTPE_728382e8aa808b38e98ad13ccc899514_33429&search_date=14092026&expected_price_uuid=01a09fc7-5ebb-8030-eede-6d792427fea1&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=yFUa0C9ZVZclIJDO3xX1JA&expected_price_source=share&expected_price_currency=twd&expected_price=12607"
+    }
+   ]
+  },
+  {
+   "key": "TPE-OSA-2027-05",
+   "code": "OSA",
+   "name": "大阪",
+   "month": "2027-05",
+   "label": "2027-05",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": []
+  },
+  {
+   "key": "TPE-OSA-2027-06",
+   "code": "OSA",
+   "name": "大阪",
+   "month": "2027-06",
+   "label": "2027-06",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": []
+  },
+  {
+   "key": "TPE-OSA-2027-07",
+   "code": "OSA",
+   "name": "大阪",
+   "month": "2027-07",
+   "label": "2027-07",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": [
+    {
+     "price": 9849,
+     "airline": "SL",
+     "flight_number": "396",
+     "destination_airport": "KIX",
+     "departure_at": "2027-07-06T08:55:00+08:00",
+     "return_at": "2027-07-10T13:30:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE0607OSA10071?t=SL18148641001814877000000155TPEKIX18152262001815232800000170KIXTPE_fbf1d835b69f50ee033dfea18901963a_26062&search_date=15092026&expected_price_uuid=01a0a5b2-c3a1-8040-61a2-61148297e7b1&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=0MehQHW8vhU7lgY_eKskFw&expected_price_source=share&expected_price_currency=twd&expected_price=9849"
+    }
+   ]
+  },
+  {
+   "key": "TPE-OSA-2027-08",
+   "code": "OSA",
+   "name": "大阪",
+   "month": "2027-08",
+   "label": "2027-08",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": []
+  },
+  {
+   "key": "TPE-OSA-2027-09",
+   "code": "OSA",
+   "name": "大阪",
+   "month": "2027-09",
+   "label": "2027-09",
+   "kind": "month",
+   "target_price": 6000,
+   "offers": []
+  },
+  {
+   "key": "TPE-FUK-2027-summer",
+   "code": "FUK",
+   "name": "福岡",
+   "month": "2027-summer",
+   "label": "2027 暑假 7/29–8/5",
+   "kind": "trip",
+   "target_price": null,
+   "offers": []
+  },
+  {
    "key": "TPE-FUK-2026-10",
    "code": "FUK",
    "name": "福岡",
    "month": "2026-10",
-   "target_price": 9000,
+   "label": "2026-10",
+   "kind": "month",
+   "target_price": 6500,
    "offers": [
-    {
-     "price": 7595,
-     "airline": "IT",
-     "flight_number": "720",
-     "destination_airport": "FUK",
-     "departure_at": "2026-10-01T14:25:00+08:00",
-     "return_at": "2026-10-07T10:55:00+09:00",
-     "transfers": 0,
-     "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE0110FUK07101?t=IT17908647001790877000000145TPEFUK17913705001791375900000150FUKTPE_0a0d3d0df81a0bfc24d9d6fb717b2ef7_20148&search_date=11092026&expected_price_uuid=01a08f06-095a-8030-213c-c6b68d759288&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=3PtE1bBq-u7YF2QLucnadg&expected_price_source=share&expected_price_currency=twd&expected_price=7595"
-    },
     {
      "price": 8639,
      "airline": "TW",
@@ -543,7 +1195,9 @@
    "code": "FUK",
    "name": "福岡",
    "month": "2026-11",
-   "target_price": 9000,
+   "label": "2026-11",
+   "kind": "month",
+   "target_price": 6500,
    "offers": [
     {
      "price": 9873,
@@ -585,7 +1239,9 @@
    "code": "FUK",
    "name": "福岡",
    "month": "2026-12",
-   "target_price": 9000,
+   "label": "2026-12",
+   "kind": "month",
+   "target_price": 6500,
    "offers": [
     {
      "price": 12121,
@@ -601,11 +1257,195 @@
    ]
   },
   {
+   "key": "TPE-FUK-2027-01",
+   "code": "FUK",
+   "name": "福岡",
+   "month": "2027-01",
+   "label": "2027-01",
+   "kind": "month",
+   "target_price": 6500,
+   "offers": [
+    {
+     "price": 9082,
+     "airline": "MM",
+     "flight_number": "930",
+     "destination_airport": "FUK",
+     "departure_at": "2027-01-14T18:20:00+08:00",
+     "return_at": "2027-01-20T17:35:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE1401FUK20011?t=MM17999508001800014100000995TPEOKAFUK18004665001800521700000980FUKOKATPE_b3480bffd4838d6c1b61b4cd565492ee_24145&search_date=11092026&expected_price_uuid=01a0912e-c94d-8030-6e27-589b2d019e29&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=DqsVJ2MslwPdQG7AxF9qgw&expected_price_source=share&expected_price_currency=twd&expected_price=9082"
+    },
+    {
+     "price": 9335,
+     "airline": "VZ",
+     "flight_number": "568",
+     "destination_airport": "FUK",
+     "departure_at": "2027-01-10T14:45:00+08:00",
+     "return_at": "2027-01-13T17:35:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE1001FUK13011?t=MM17995923001799616000000335TPEOKAFUK17998617001799916900000980FUKOKATPE_abd9f6a02a732175f96c0dc1f260b948_24826&search_date=12092026&expected_price_uuid=01a09675-5479-8030-e19d-6cbda290e013&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=hMA0QVn2GpsE4D7K8yMLag&expected_price_source=share&expected_price_currency=twd&expected_price=9335"
+    }
+   ]
+  },
+  {
+   "key": "TPE-FUK-2027-02",
+   "code": "FUK",
+   "name": "福岡",
+   "month": "2027-02",
+   "label": "2027-02",
+   "kind": "month",
+   "target_price": 6500,
+   "offers": [
+    {
+     "price": 9199,
+     "airline": "IT",
+     "flight_number": "720",
+     "destination_airport": "FUK",
+     "departure_at": "2027-02-11T12:40:00+08:00",
+     "return_at": "2027-02-18T17:55:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1102FUK18021?t=IT18023496001802361300000135TPEFUK18029733001802979600000165FUKTPE_34cf650473dc3f95e8e73fb241fbbdc4_24421&search_date=15092026&expected_price_uuid=01a0a38a-ed62-8030-ad4b-ee33f5bcd1f9&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=iLL93C2MP0qz-In-umUrvQ&expected_price_source=share&expected_price_currency=twd&expected_price=9199"
+    }
+   ]
+  },
+  {
+   "key": "TPE-FUK-2027-03",
+   "code": "FUK",
+   "name": "福岡",
+   "month": "2027-03",
+   "label": "2027-03",
+   "kind": "month",
+   "target_price": 6500,
+   "offers": []
+  },
+  {
+   "key": "TPE-FUK-2027-04",
+   "code": "FUK",
+   "name": "福岡",
+   "month": "2027-04",
+   "label": "2027-04",
+   "kind": "month",
+   "target_price": 6500,
+   "offers": [
+    {
+     "price": 10149,
+     "airline": "AK",
+     "flight_number": "1510",
+     "destination_airport": "FUK",
+     "departure_at": "2027-04-20T12:00:00+08:00",
+     "return_at": "2027-04-25T16:20:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE2004FUK25041?t=AK18082224001808234400000140TPEFUK18086700001808675400000150FUKTPE_3189fbd0394434da00d1e60d5461dea3_26749&search_date=16092026&expected_price_uuid=01a0a9f6-9270-8040-acbd-2e2706eb5918&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=pGuWo308Ps9gfzq0-NcSpg&expected_price_source=share&expected_price_currency=twd&expected_price=10149"
+    }
+   ]
+  },
+  {
+   "key": "TPE-FUK-2027-05",
+   "code": "FUK",
+   "name": "福岡",
+   "month": "2027-05",
+   "label": "2027-05",
+   "kind": "month",
+   "target_price": 6500,
+   "offers": [
+    {
+     "price": 11075,
+     "airline": "AK",
+     "flight_number": "1510",
+     "destination_airport": "FUK",
+     "departure_at": "2027-05-21T12:00:00+08:00",
+     "return_at": "2027-05-26T16:20:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE2105FUK26051?t=AK18109008001810912800000140TPEFUK18113484001811353800000150FUKTPE_f6e07f0bcaebcbc53a80ba42671e8004_29444&search_date=11092026&expected_price_uuid=01a09191-7935-8030-e926-7bd1c6c777eb&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=pGuWo308Ps9gfzq0-NcSpg&expected_price_source=share&expected_price_currency=twd&expected_price=11075"
+    },
+    {
+     "price": 11107,
+     "airline": "AK",
+     "flight_number": "1510",
+     "destination_airport": "FUK",
+     "departure_at": "2027-05-22T12:00:00+08:00",
+     "return_at": "2027-05-26T16:20:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE2205FUK26051?t=AK18109872001810999200000140TPEFUK18113484001811353800000150FUKTPE_4b7a701794202c78bedebe1c57fc1ffb_29572&search_date=13092026&expected_price_uuid=01a09ba7-122a-8030-2051-e581dfca509b&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=8agwzgWRmajA99XSrUDIYA&expected_price_source=share&expected_price_currency=twd&expected_price=11107"
+    }
+   ]
+  },
+  {
+   "key": "TPE-FUK-2027-06",
+   "code": "FUK",
+   "name": "福岡",
+   "month": "2027-06",
+   "label": "2027-06",
+   "kind": "month",
+   "target_price": 6500,
+   "offers": []
+  },
+  {
+   "key": "TPE-FUK-2027-07",
+   "code": "FUK",
+   "name": "福岡",
+   "month": "2027-07",
+   "label": "2027-07",
+   "kind": "month",
+   "target_price": 6500,
+   "offers": [
+    {
+     "price": 11329,
+     "airline": "AK",
+     "flight_number": "1510",
+     "destination_airport": "FUK",
+     "departure_at": "2027-07-01T12:00:00+08:00",
+     "return_at": "2027-07-06T16:20:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE0107FUK06071?t=AK18144432001814455200000140TPEFUK18148908001814896200000150FUKTPE_4bcb2edc877a7f9e878d33111fef1c4c_30127&search_date=13092026&expected_price_uuid=01a0990e-2bb0-8030-ae55-9280009a1fe0&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=pGuWo308Ps9gfzq0-NcSpg&expected_price_source=share&expected_price_currency=twd&expected_price=11329"
+    }
+   ]
+  },
+  {
+   "key": "TPE-FUK-2027-08",
+   "code": "FUK",
+   "name": "福岡",
+   "month": "2027-08",
+   "label": "2027-08",
+   "kind": "month",
+   "target_price": 6500,
+   "offers": []
+  },
+  {
+   "key": "TPE-FUK-2027-09",
+   "code": "FUK",
+   "name": "福岡",
+   "month": "2027-09",
+   "label": "2027-09",
+   "kind": "month",
+   "target_price": 6500,
+   "offers": []
+  },
+  {
+   "key": "TPE-SPK-2027-summer",
+   "code": "SPK",
+   "name": "札幌",
+   "month": "2027-summer",
+   "label": "2027 暑假 7/29–8/5",
+   "kind": "trip",
+   "target_price": null,
+   "offers": []
+  },
+  {
    "key": "TPE-SPK-2026-10",
    "code": "SPK",
    "name": "札幌",
    "month": "2026-10",
-   "target_price": 13000,
+   "label": "2026-10",
+   "kind": "month",
+   "target_price": 7000,
    "offers": [
     {
      "price": 7394,
@@ -636,7 +1476,9 @@
    "code": "SPK",
    "name": "札幌",
    "month": "2026-11",
-   "target_price": 13000,
+   "label": "2026-11",
+   "kind": "month",
+   "target_price": 7000,
    "offers": [
     {
      "price": 10420,
@@ -678,7 +1520,9 @@
    "code": "SPK",
    "name": "札幌",
    "month": "2026-12",
-   "target_price": 13000,
+   "label": "2026-12",
+   "kind": "month",
+   "target_price": 7000,
    "offers": [
     {
      "price": 11688,
@@ -705,11 +1549,204 @@
    ]
   },
   {
+   "key": "TPE-SPK-2027-01",
+   "code": "SPK",
+   "name": "札幌",
+   "month": "2027-01",
+   "label": "2027-01",
+   "kind": "month",
+   "target_price": 7000,
+   "offers": [
+    {
+     "price": 13122,
+     "airline": "HB",
+     "flight_number": "703",
+     "destination_airport": "CTS",
+     "departure_at": "2027-01-21T10:45:00+08:00",
+     "return_at": "2027-01-26T20:40:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE2101SPK26011?t=HB18005283001800630000001635TPEHKGCTS18009960001801050600000970CTSNRTTPE_0dfa90ca035e7c8f7084098930834085_34632&search_date=14092026&expected_price_uuid=01a09f1f-94fa-8030-a2af-c0c909874619&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=V7CxFBqQcoYCCpL978I4JQ&expected_price_source=share&expected_price_currency=twd&expected_price=13122"
+    },
+    {
+     "price": 13230,
+     "airline": "VZ",
+     "flight_number": "566",
+     "destination_airport": "CTS",
+     "departure_at": "2027-01-15T07:30:00+08:00",
+     "return_at": "2027-01-21T20:40:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE1501SPK21011?t=GK17999982001800042000000670TPEKIXCTS18005640001800618600000970CTSNRTTPE_0ccfd265011b320b44b30486c023f254_35171&search_date=17092026&expected_price_uuid=01a0af71-8f88-8030-ec35-1a68c42f1f25&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=yOHvdN4yLX2Ddhx0nv4gdw&expected_price_source=share&expected_price_currency=twd&expected_price=13230"
+    },
+    {
+     "price": 14421,
+     "airline": "VZ",
+     "flight_number": "566",
+     "destination_airport": "CTS",
+     "departure_at": "2027-01-01T07:30:00+08:00",
+     "return_at": "2027-01-09T20:40:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE0101SPK09011?t=GK17987886001798832400000670TPEKIXCTS17995272001799581800000970CTSNRTTPE_b9b4e40f3a1d3035540294c1fad9610d_38351&search_date=12092026&expected_price_uuid=01a09602-bc27-8030-e269-db99eda6ce06&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=hhQi9G7wyq1EDfDRDQwu-Q&expected_price_source=share&expected_price_currency=twd&expected_price=14421"
+    },
+    {
+     "price": 14498,
+     "airline": "HB",
+     "flight_number": "703",
+     "destination_airport": "CTS",
+     "departure_at": "2027-01-21T11:40:00+08:00",
+     "return_at": "2027-01-28T14:10:00+09:00",
+     "transfers": 1,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE2101SPK28011?t=VZ18005316001800630000001580TPEHKGCTS18011454001801159200000290CTSTPE_ee70bf9f2c0621e08ddda2924f391d0e_38327&search_date=17092026&expected_price_uuid=01a0ad30-627f-8040-2cc0-5ca860811c3d&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=9Kqw-CdJeB3cLN1lU83u4A&expected_price_source=share&expected_price_currency=twd&expected_price=14498"
+    },
+    {
+     "price": 17101,
+     "airline": "JX",
+     "flight_number": "235",
+     "destination_airport": "CTS",
+     "departure_at": "2027-01-25T16:20:00+08:00",
+     "return_at": "2027-01-31T16:35:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE2501SPK31011?t=HB18008940001800975600001300TPEHKGCTS18014133001801445400000595CTSKIXTPE_bff9a008a01ccab07f2c56e581686f97_45462&search_date=17092026&expected_price_uuid=01a0af72-632e-8030-2f8f-d3957ffea687&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=CYOyO2v8RaVxYabnty1oDw&expected_price_source=share&expected_price_currency=twd&expected_price=17101"
+    }
+   ]
+  },
+  {
+   "key": "TPE-SPK-2027-02",
+   "code": "SPK",
+   "name": "札幌",
+   "month": "2027-02",
+   "label": "2027-02",
+   "kind": "month",
+   "target_price": 7000,
+   "offers": [
+    {
+     "price": 14917,
+     "airline": "GK",
+     "flight_number": "050",
+     "destination_airport": "CTS",
+     "departure_at": "2027-02-22T02:30:00+08:00",
+     "return_at": "2027-02-28T17:30:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE2202SPK28021?t=GK18032634001803294600000460TPEKIXCTS18038358001803864600000540CTSKIXTPE_d59c6f7a01d8529efbb06dc1ca7b40eb_39656&search_date=17092026&expected_price_uuid=01a0af71-ce01-8030-6602-b50273014baf&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=KG6MRBU_HtbJgc4IptUi5A&expected_price_source=share&expected_price_currency=twd&expected_price=14917"
+    },
+    {
+     "price": 16168,
+     "airline": "HB",
+     "flight_number": "703",
+     "destination_airport": "CTS",
+     "departure_at": "2027-02-25T11:40:00+08:00",
+     "return_at": "2027-03-01T16:00:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE2502SPK01031?t=HB18035556001803654000001580TPEHKGCTS18039168001804023600001840CTSHKGTPE_d2d5b8f50b41830a1654f9a312c69885_42741&search_date=17092026&expected_price_uuid=01a0ad25-c5c1-8040-a7f3-9559e563b0bd&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=8Qr1-GLURwIDjY3tO8H-qw&expected_price_source=share&expected_price_currency=twd&expected_price=16168"
+    }
+   ]
+  },
+  {
+   "key": "TPE-SPK-2027-03",
+   "code": "SPK",
+   "name": "札幌",
+   "month": "2027-03",
+   "label": "2027-03",
+   "kind": "month",
+   "target_price": 7000,
+   "offers": []
+  },
+  {
+   "key": "TPE-SPK-2027-04",
+   "code": "SPK",
+   "name": "札幌",
+   "month": "2027-04",
+   "label": "2027-04",
+   "kind": "month",
+   "target_price": 7000,
+   "offers": [
+    {
+     "price": 9150,
+     "airline": "FD",
+     "flight_number": "242",
+     "destination_airport": "CTS",
+     "departure_at": "2027-04-07T07:40:00+08:00",
+     "return_at": "2027-04-14T14:40:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE0704SPK14041?t=FD18070836001807101600000240TPECTS18077136001807725600000260CTSTPE_c7389e14ac85a8205c922dff5bb4914e_24295&search_date=14092026&expected_price_uuid=01a09d83-e3e1-8030-a112-c0fc7fee94b4&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=p30nPzwul54z0Rs2N4HlUw&expected_price_source=share&expected_price_currency=twd&expected_price=9150"
+    }
+   ]
+  },
+  {
+   "key": "TPE-SPK-2027-05",
+   "code": "SPK",
+   "name": "札幌",
+   "month": "2027-05",
+   "label": "2027-05",
+   "kind": "month",
+   "target_price": 7000,
+   "offers": []
+  },
+  {
+   "key": "TPE-SPK-2027-06",
+   "code": "SPK",
+   "name": "札幌",
+   "month": "2027-06",
+   "label": "2027-06",
+   "kind": "month",
+   "target_price": 7000,
+   "offers": []
+  },
+  {
+   "key": "TPE-SPK-2027-07",
+   "code": "SPK",
+   "name": "札幌",
+   "month": "2027-07",
+   "label": "2027-07",
+   "kind": "month",
+   "target_price": 7000,
+   "offers": []
+  },
+  {
+   "key": "TPE-SPK-2027-08",
+   "code": "SPK",
+   "name": "札幌",
+   "month": "2027-08",
+   "label": "2027-08",
+   "kind": "month",
+   "target_price": 7000,
+   "offers": []
+  },
+  {
+   "key": "TPE-SPK-2027-09",
+   "code": "SPK",
+   "name": "札幌",
+   "month": "2027-09",
+   "label": "2027-09",
+   "kind": "month",
+   "target_price": 7000,
+   "offers": []
+  },
+  {
+   "key": "TPE-OKA-2027-summer",
+   "code": "OKA",
+   "name": "沖繩",
+   "month": "2027-summer",
+   "label": "2027 暑假 7/29–8/5",
+   "kind": "trip",
+   "target_price": null,
+   "offers": []
+  },
+  {
    "key": "TPE-OKA-2026-10",
    "code": "OKA",
    "name": "沖繩",
    "month": "2026-10",
-   "target_price": 7000,
+   "label": "2026-10",
+   "kind": "month",
+   "target_price": 4500,
    "offers": [
     {
      "price": 4934,
@@ -828,7 +1865,9 @@
    "code": "OKA",
    "name": "沖繩",
    "month": "2026-11",
-   "target_price": 7000,
+   "label": "2026-11",
+   "kind": "month",
+   "target_price": 4500,
    "offers": [
     {
      "price": 6048,
@@ -859,7 +1898,9 @@
    "code": "OKA",
    "name": "沖繩",
    "month": "2026-12",
-   "target_price": 7000,
+   "label": "2026-12",
+   "kind": "month",
+   "target_price": 4500,
    "offers": [
     {
      "price": 5709,
@@ -873,6 +1914,189 @@
      "link": "https://www.aviasales.com/search/TPE0912OKA16121?t=IT17968404001796849400000090TPEOKA17974143001797416400000095OKATPE_4fbb1c874ec0e4b887ff6e1696db0ca1_15113&search_date=16092026&expected_price_uuid=01a0aa92-618c-8030-298b-da014a531191&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=W-2WB3YOGIikgD2EHXnXEw&expected_price_source=share&expected_price_currency=twd&expected_price=5709"
     }
    ]
+  },
+  {
+   "key": "TPE-OKA-2027-01",
+   "code": "OKA",
+   "name": "沖繩",
+   "month": "2027-01",
+   "label": "2027-01",
+   "kind": "month",
+   "target_price": 4500,
+   "offers": [
+    {
+     "price": 6139,
+     "airline": "MM",
+     "flight_number": "930",
+     "destination_airport": "OKA",
+     "departure_at": "2027-01-16T18:20:00+08:00",
+     "return_at": "2027-01-23T08:15:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1601OKA23011?t=MM18001236001800132600000090TPEOKA18006921001800694500000100OKATPE_ce8f13124227aa9902b48acf028d1ad4_16320&search_date=11092026&expected_price_uuid=01a09174-79eb-8030-efb5-d2e060a6d9f3&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=1DIg5gr2SgnBXXQEnfWRtQ&expected_price_source=share&expected_price_currency=twd&expected_price=6139"
+    }
+   ]
+  },
+  {
+   "key": "TPE-OKA-2027-02",
+   "code": "OKA",
+   "name": "沖繩",
+   "month": "2027-02",
+   "label": "2027-02",
+   "kind": "month",
+   "target_price": 4500,
+   "offers": [
+    {
+     "price": 6930,
+     "airline": "SL",
+     "flight_number": "380",
+     "destination_airport": "OKA",
+     "departure_at": "2027-02-26T09:00:00+08:00",
+     "return_at": "2027-03-01T12:10:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE2602OKA01031?t=SL18036324001803640500000075TPEOKA18039030001803905100000095OKATPE_9dce92b7293472bcc0e440eb6fd5e7fe_18430&search_date=12092026&expected_price_uuid=01a0968b-9b4b-8030-2e64-b5b238239f91&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=EoL6UJFqidEphJimuDQjNw&expected_price_source=share&expected_price_currency=twd&expected_price=6930"
+    },
+    {
+     "price": 11714,
+     "airline": "SL",
+     "flight_number": "382",
+     "destination_airport": "OKA",
+     "departure_at": "2027-02-10T16:10:00+08:00",
+     "return_at": "2027-02-13T19:30:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1002OKA13021?t=SL18022758001802284200000080TPEOKA18025470001802549100000095OKATPE_013962479e904b88c140fb75d18fb4a7_30974&search_date=16092026&expected_price_uuid=01a0aadd-44df-8050-6d27-08f502dae47f&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=7VdLz8NTpF6fQB6X0ZaDHQ&expected_price_source=share&expected_price_currency=twd&expected_price=11714"
+    }
+   ]
+  },
+  {
+   "key": "TPE-OKA-2027-03",
+   "code": "OKA",
+   "name": "沖繩",
+   "month": "2027-03",
+   "label": "2027-03",
+   "kind": "month",
+   "target_price": 4500,
+   "offers": [
+    {
+     "price": 5546,
+     "airline": "MM",
+     "flight_number": "930",
+     "destination_airport": "OKA",
+     "departure_at": "2027-03-09T18:20:00+08:00",
+     "return_at": "2027-03-13T08:15:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE0903OKA13031?t=MM18046164001804625400000090TPEOKA18049257001804928100000100OKATPE_dda43524049ce1d8b99d442042e37491_14695&search_date=17092026&expected_price_uuid=01a0affd-40af-8030-2b09-6f44e09bf381&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=_wdccK7w_kzQnqNVp8cPKQ&expected_price_source=share&expected_price_currency=twd&expected_price=5546"
+    }
+   ]
+  },
+  {
+   "key": "TPE-OKA-2027-04",
+   "code": "OKA",
+   "name": "沖繩",
+   "month": "2027-04",
+   "label": "2027-04",
+   "kind": "month",
+   "target_price": 4500,
+   "offers": []
+  },
+  {
+   "key": "TPE-OKA-2027-05",
+   "code": "OKA",
+   "name": "沖繩",
+   "month": "2027-05",
+   "label": "2027-05",
+   "kind": "month",
+   "target_price": 4500,
+   "offers": [
+    {
+     "price": 6545,
+     "airline": "FD",
+     "flight_number": "230",
+     "destination_airport": "OKA",
+     "departure_at": "2027-05-20T13:30:00+08:00",
+     "return_at": "2027-05-26T18:20:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE2005OKA26051?t=VZ18108198001810828500000085TPEOKA18113556001811357700000095OKATPE_0c258e0b23784cf5698ae4c9a16f0add_17388&search_date=14092026&expected_price_uuid=01a09dbf-14b7-8030-2845-7c198f207820&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=Jb1AnYAlAm3qGT2lC1dvLA&expected_price_source=share&expected_price_currency=twd&expected_price=6545"
+    },
+    {
+     "price": 8956,
+     "airline": "FD",
+     "flight_number": "230",
+     "destination_airport": "OKA",
+     "departure_at": "2027-05-14T13:30:00+08:00",
+     "return_at": "2027-05-18T16:55:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1405OKA18051?t=FD18103014001810310100000085TPEOKA18106593001810661400000095OKATPE_c025a5d153f7410a37d2b83768a40c95_23745&search_date=17092026&expected_price_uuid=01a0b08d-85b9-8030-ae2b-0d2969a3daf2&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=QGl1AuHRI5p-bxQqGQTd1w&expected_price_source=share&expected_price_currency=twd&expected_price=8956"
+    }
+   ]
+  },
+  {
+   "key": "TPE-OKA-2027-06",
+   "code": "OKA",
+   "name": "沖繩",
+   "month": "2027-06",
+   "label": "2027-06",
+   "kind": "month",
+   "target_price": 4500,
+   "offers": [
+    {
+     "price": 5690,
+     "airline": "VZ",
+     "flight_number": "568",
+     "destination_airport": "OKA",
+     "departure_at": "2027-06-21T14:55:00+08:00",
+     "return_at": "2027-06-25T18:20:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE2106OKA25061?t=VZ18135897001813598400000085TPEOKA18139476001813949700000095OKATPE_46357ca589000f861b2f6d1afb8dfba5_15117&search_date=14092026&expected_price_uuid=01a09d97-c130-8030-2123-b4b0411a80ab&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=b5_NJs4RUCpyUs92br2Wyw&expected_price_source=share&expected_price_currency=twd&expected_price=5690"
+    },
+    {
+     "price": 7709,
+     "airline": "FD",
+     "flight_number": "230",
+     "destination_airport": "OKA",
+     "departure_at": "2027-06-05T13:30:00+08:00",
+     "return_at": "2027-06-08T18:20:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE0506OKA08061?t=VZ18122022001812210900000085TPEOKA18124788001812480900000095OKATPE_67ae745378046d75398bd9ebf39b157f_20524&search_date=16092026&expected_price_uuid=01a0a948-e0e4-8040-633e-4aaf70e8f6ee&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=0RXCtpox1QqqCVh8GmBQ8w&expected_price_source=share&expected_price_currency=twd&expected_price=7709"
+    }
+   ]
+  },
+  {
+   "key": "TPE-OKA-2027-07",
+   "code": "OKA",
+   "name": "沖繩",
+   "month": "2027-07",
+   "label": "2027-07",
+   "kind": "month",
+   "target_price": 4500,
+   "offers": []
+  },
+  {
+   "key": "TPE-OKA-2027-08",
+   "code": "OKA",
+   "name": "沖繩",
+   "month": "2027-08",
+   "label": "2027-08",
+   "kind": "month",
+   "target_price": 4500,
+   "offers": []
+  },
+  {
+   "key": "TPE-OKA-2027-09",
+   "code": "OKA",
+   "name": "沖繩",
+   "month": "2027-09",
+   "label": "2027-09",
+   "kind": "month",
+   "target_price": 4500,
+   "offers": []
   }
  ]
 }
