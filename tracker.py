@@ -32,6 +32,7 @@ SERP_MIN_INTERVAL = timedelta(hours=20)  # 免費額度有限，指定行程每�
 TW = timezone(timedelta(hours=8))
 HISTORY_MAX_DAYS = 365
 OFFERS_KEPT = 10
+PREFERRED_KEPT = 5
 
 
 def load_json(path, default):
@@ -140,6 +141,28 @@ def serp_account(key):
         print(f"SerpApi 帳號查詢失敗：{type(e).__name__}")
 
 
+def is_preferred(cfg, offer):
+    """是否為偏好航空（例如長榮 BR）；同時比對航空代碼、航班號前綴與中文名稱。"""
+    airline = offer.get("airline") or ""
+    flights = [f.strip() for f in (offer.get("flight_number") or "").split(",")]
+    for a in cfg.get("preferred_airlines", []):
+        if airline == a["code"] or a["name"] in airline:
+            return True
+        # Google 航班號為「BR 186」；Travelpayouts 的 flight_number 只有數字，由 airline 判斷
+        if any(f.startswith(a["code"] + " ") for f in flights):
+            return True
+    return False
+
+
+def pick_offers(cfg, offers):
+    """保留最便宜的 N 班，另外把偏好航空的航班也留下，避免因為較貴而被刷掉。"""
+    for o in offers:
+        o["preferred"] = is_preferred(cfg, o)
+    top = offers[:OFFERS_KEPT]
+    extra = [o for o in offers[OFFERS_KEPT:] if o["preferred"]][:PREFERRED_KEPT]
+    return top + extra
+
+
 def trip_days(offer):
     if not offer.get("return_at"):
         return None
@@ -197,6 +220,8 @@ def build_email(alerts, currency):
         dep = o["departure_at"][:10]
         ret = o["return_at"][:10] if o.get("return_at") else "單程"
         stops = "直飛" if o["transfers"] == 0 else f"轉機 {o['transfers']} 次"
+        if o.get("preferred"):
+            stops += " ⭐"
         link = f'<a href="{o["link"]}">查看</a>' if o.get("link") else ""
         rows.append(
             f"<tr><td>{a['name']}</td><td><b>{o['price']:,}</b></td>"
@@ -253,17 +278,19 @@ def main():
                 "key": key, "code": d["code"], "name": d["name"], "month": p["id"],
                 "label": p["label"], "kind": p["kind"], "target_price": target,
             }
+            if p["kind"] == "trip":
+                route.update(depart=p["depart"], **{"return": p["return"]})
             fresh = True
             try:
                 if p["kind"] == "trip" and serp_key:
                     if serp_due:
                         offers, route["insights"] = fetch_serp_trip(cfg, d["code"], p, serp_key)
-                        offers = offers[:OFFERS_KEPT]
+                        offers = pick_offers(cfg, offers)
                         route["checked_at"] = now
                         serp_ok = True
                     else:  # 沿用上次 SerpApi 結果，不寫入歷史
                         prev = prev_routes.get(key, {})
-                        offers = prev.get("offers", [])
+                        offers = pick_offers(cfg, prev.get("offers", []))
                         route["insights"] = prev.get("insights")
                         route["checked_at"] = prev.get("checked_at")
                         fresh = False
@@ -274,7 +301,7 @@ def main():
                     time.sleep(0.2)
                     # 指定行程已固定日期，不再套用天數篩選
                     kept = raw if p["kind"] == "trip" else [o for o in raw if keep_offer(cfg, o)]
-                    offers = sorted((simplify(o) for o in kept), key=lambda o: o["price"])[:OFFERS_KEPT]
+                    offers = pick_offers(cfg, sorted((simplify(o) for o in kept), key=lambda o: o["price"]))
                     print(f"[{key}] {len(raw)} 筆，符合條件 {len(offers)} 筆，最低 {offers[0]['price'] if offers else '-'}")
             except Exception as e:  # 單一航線失敗不影響其他航線
                 print(f"[{key}] 抓取失敗：{e}")
@@ -287,7 +314,11 @@ def main():
             if not fresh:
                 continue
             if best:
-                history.append({"t": now, "key": key, "code": d["code"], "month": p["id"], "price": best["price"]})
+                entry = {"t": now, "key": key, "code": d["code"], "month": p["id"], "price": best["price"]}
+                pref = next((o for o in offers if o.get("preferred")), None)
+                if pref:
+                    entry["pref"] = pref["price"]
+                history.append(entry)
 
             if target is None:  # 沒設目標價只記錄、不通知
                 continue

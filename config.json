@@ -8,6 +8,12 @@
   "trip_days_min": 3,
   "trip_days_max": 8,
   "direct_only": false,
+  "preferred_airlines": [
+    {
+      "code": "BR",
+      "name": "長榮"
+    }
+  ],
   "trips": [
     {
       "id": "2027-summer",

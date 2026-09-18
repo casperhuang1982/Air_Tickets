@@ -3,72 +3,193 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>台北 → 日本 機票追蹤</title>
+<title>下一站，日本 ✈ 機票追蹤</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+TC:wght@400;500;700&family=Shippori+Mincho:wght@600;800&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   :root {
-    --bg: #f6f7f9; --card: #fff; --text: #1d2330; --muted: #6b7385; --line: #e3e6ec;
-    --good: #12805c; --good-bg: #e3f5ee; --warn: #9a5b00; --accent: #2458d6;
+    --night: #0e2240; --dusk: #3b4f86; --sakura: #f3b3ad; --sun: #ffd9a0;
+    --paper: #fbf7f0; --card: #fffdf9; --ink: #1f2733; --muted: #6f7686; --line: #e8e0d3;
+    --torii: #d6402b; --eva: #0b7a53; --eva-bg: #e2f3eb; --good: #0b7a53; --warn: #a2561a; --warn-bg: #fdf0e1;
+    --sans: "Noto Sans TC", system-ui, "Microsoft JhengHei", sans-serif;
+    --serif: "Shippori Mincho", "Noto Serif TC", "PMingLiU", serif;
+    --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; font: 15px/1.5 system-ui, "Noto Sans TC", "Microsoft JhengHei", sans-serif; background: var(--bg); color: var(--text); }
-  main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px; }
-  header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 20px; }
-  h1 { font-size: 22px; margin: 0; }
-  h2 { font-size: 16px; margin: 0 0 12px; }
-  .muted { color: var(--muted); font-size: 13px; }
-  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; margin-bottom: 20px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px; cursor: pointer; transition: border-color .15s; }
-  .card:hover { border-color: #b9c2d3; }
-  .card.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
-  .card .city { font-weight: 600; }
-  .card .price { font-size: 24px; font-weight: 700; margin: 4px 0; font-variant-numeric: tabular-nums; }
-  .badge { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 99px; }
-  .badge.good { background: var(--good-bg); color: var(--good); }
-  .badge.warn { background: #fff3df; color: var(--warn); }
-  .panel { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin-bottom: 20px; }
-  .tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
-  .tabs button { border: 1px solid var(--line); background: #fff; border-radius: 99px; padding: 4px 12px; cursor: pointer; font: inherit; font-size: 13px; }
-  .tabs button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  html { color-scheme: light; }
+  body { margin: 0; font: 15px/1.6 var(--sans); background: var(--paper); color: var(--ink); }
+
+  /* ---------- 封面 ---------- */
+  .hero { position: relative; overflow: hidden; color: #fff;
+    background: linear-gradient(180deg, var(--night) 0%, var(--dusk) 48%, #c98a9a 78%, var(--sakura) 100%); }
+  .hero svg.scene { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero-inner { position: relative; max-width: 1120px; margin: 0 auto; padding: 44px 20px 120px; }
+  .eyebrow { font: 600 12px/1 var(--mono); letter-spacing: .22em; opacity: .8; }
+  .hero h1 { font: 800 clamp(38px, 7vw, 68px)/1.15 var(--serif); margin: 14px 0 8px; letter-spacing: .04em; }
+  .hero p.sub { margin: 0; opacity: .88; font-size: 16px; }
+  .trip-chip { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-top: 22px;
+    padding: 10px 18px; border-radius: 14px; background: rgba(255,255,255,.14); backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,.28); }
+  .trip-chip b { font: 600 15px var(--mono); }
+  .countdown { font: 800 26px/1 var(--serif); color: var(--sun); }
+  .updated { margin-top: 14px; font-size: 13px; opacity: .75; }
+
+  main { max-width: 1120px; margin: -72px auto 0; padding: 0 20px 56px; position: relative; }
+
+  /* ---------- 期間選擇 ---------- */
+  .tabs-bar { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px;
+    box-shadow: 0 10px 30px rgba(14,34,64,.12); margin-bottom: 22px; }
+  .tabs-bar .label { font: 600 11px var(--mono); letter-spacing: .18em; color: var(--muted); margin: 0 0 8px 4px; }
+  .tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: thin; }
+  .tabs button { flex: none; border: 1px solid var(--line); background: #fff; border-radius: 99px; padding: 6px 14px;
+    cursor: pointer; font: inherit; font-size: 13px; color: var(--ink); }
+  .tabs button:hover { border-color: #cbbfae; }
+  .tabs button.active { background: var(--night); border-color: var(--night); color: #fff; }
+  .tabs button.trip { border-color: var(--torii); color: var(--torii); font-weight: 700; }
+  .tabs button.trip.active { background: var(--torii); color: #fff; }
+
+  /* ---------- 登機證卡片 ---------- */
+  .passes { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; margin-bottom: 26px; }
+  .pass { --c: var(--torii); display: flex; background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    cursor: pointer; position: relative; transition: transform .15s, box-shadow .15s;
+    box-shadow: 0 2px 6px rgba(14,34,64,.05); }
+  .pass::before { content: ""; position: absolute; left: 0; top: 14px; bottom: 14px; width: 4px; border-radius: 0 4px 4px 0; background: var(--c); }
+  .pass:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(14,34,64,.10); }
+  .pass.active { border-color: var(--c); box-shadow: 0 0 0 2px var(--c), 0 10px 24px rgba(14,34,64,.10); }
+  .pass-main { flex: 1; padding: 16px 16px 14px 22px; min-width: 0; }
+  .route { font: 600 12px var(--mono); color: var(--muted); letter-spacing: .08em; }
+  .route .plane { color: var(--c); margin: 0 4px; }
+  .city { display: flex; align-items: baseline; gap: 10px; margin: 2px 0 8px; }
+  .city .kanji { font: 800 30px/1.2 var(--serif); }
+  .city .en { font: 600 11px var(--mono); letter-spacing: .2em; color: var(--c); }
+  .price-label { font-size: 12px; color: var(--muted); }
+  .price { font: 600 26px/1.2 var(--mono); letter-spacing: -.01em; }
+  .price small { font-size: 13px; color: var(--muted); margin-right: 3px; }
+  .meta { font-size: 12.5px; color: var(--muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .eva-line { margin-top: 10px; padding: 6px 10px; border-radius: 10px; background: var(--eva-bg); color: var(--eva);
+    font-size: 13px; display: flex; justify-content: space-between; gap: 8px; }
+  .eva-line b { font-family: var(--mono); }
+  .eva-line.none { background: #f3f1ec; color: var(--muted); }
+  .pass-stub { width: 92px; flex: none; border-left: 2px dashed var(--line); position: relative;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 16px 8px 14px; text-align: center; }
+  .pass-stub::before, .pass-stub::after { content: ""; position: absolute; left: -11px; width: 20px; height: 20px;
+    border-radius: 50%; background: var(--paper); border: 1px solid var(--line); }
+  .pass-stub::before { top: -11px; clip-path: inset(50% 0 0 0); }
+  .pass-stub::after { bottom: -11px; clip-path: inset(0 0 50% 0); }
+  .stub-icon { font-size: 34px; line-height: 1; }
+  .stub-target { font-size: 11px; color: var(--muted); line-height: 1.3; }
+  .stub-target b { display: block; font: 600 13px var(--mono); color: var(--ink); }
+  .badge { display: inline-block; font-size: 11.5px; padding: 2px 8px; border-radius: 99px; white-space: nowrap; }
+  .badge.good { background: var(--eva-bg); color: var(--good); }
+  .badge.warn { background: var(--warn-bg); color: var(--warn); }
+  .badge.none { background: #f0eee9; color: var(--muted); }
+
+  /* ---------- 面板 ---------- */
+  .panel { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 18px 14px; margin-bottom: 22px; }
+  .panel-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+  .panel h2 { font: 800 20px var(--serif); margin: 0; }
+  .panel h2 .jp { color: var(--muted); font-size: 14px; margin-left: 6px; }
   .chart-wrap { position: relative; height: 300px; }
+  .toggle { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 99px;
+    padding: 5px 12px; font-size: 13px; cursor: pointer; background: #fff; user-select: none; }
+  .toggle.on { background: var(--eva); border-color: var(--eva); color: #fff; }
+  .insight { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; padding: 10px 14px; margin-bottom: 12px;
+    border-radius: 12px; background: #f6f1e8; font-size: 13.5px; }
+  .insight .lvl { font-weight: 700; }
+  .insight .lvl.low { color: var(--good); } .insight .lvl.high { color: var(--torii); }
   .table-wrap { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; font-size: 14px; }
-  th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
-  th { color: var(--muted); font-weight: 500; font-size: 13px; }
-  td.num { font-variant-numeric: tabular-nums; font-weight: 600; }
+  th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { color: var(--muted); font-weight: 500; font-size: 12.5px; }
+  td.num { font: 600 15px var(--mono); }
   tr.good td.num { color: var(--good); }
-  a { color: var(--accent); text-decoration: none; }
+  tr.eva td:first-child { box-shadow: inset 4px 0 0 var(--eva); }
+  tr.eva { background: #f4fbf7; }
+  .eva-tag { display: inline-block; font-size: 11px; font-weight: 700; color: #fff; background: var(--eva);
+    border-radius: 6px; padding: 0 6px; margin-right: 6px; }
+  a { color: #2651b8; text-decoration: none; }
   a:hover { text-decoration: underline; }
-  .empty { padding: 32px; text-align: center; color: var(--muted); }
+  .empty { padding: 36px 12px; text-align: center; color: var(--muted); }
+  .note { font-size: 12.5px; color: var(--muted); margin: 10px 2px 0; }
+  footer { text-align: center; color: var(--muted); font-size: 13px; padding: 8px 0 0; }
+  footer .jp { font: 600 18px var(--serif); color: var(--ink); display: block; margin-bottom: 4px; }
+
+  @media (max-width: 520px) {
+    .hero-inner { padding: 32px 18px 110px; }
+    main { padding: 0 14px 44px; }
+    .passes { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
-<main>
-  <header>
-    <h1>✈️ 台北 → 日本 機票追蹤</h1>
-    <span class="muted" id="updated"></span>
-  </header>
 
-  <div class="cards" id="cards"></div>
+<header class="hero">
+  <svg class="scene" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <g fill="#fff" opacity=".7">
+      <circle cx="90" cy="60" r="1.4"/><circle cx="210" cy="30" r="1"/><circle cx="330" cy="90" r="1.2"/>
+      <circle cx="520" cy="40" r="1"/><circle cx="700" cy="70" r="1.4"/><circle cx="860" cy="28" r="1"/>
+      <circle cx="980" cy="95" r="1.2"/><circle cx="1110" cy="50" r="1.4"/><circle cx="1160" cy="130" r="1"/>
+      <circle cx="620" cy="120" r="1"/><circle cx="420" cy="150" r="1"/>
+    </g>
+    <circle cx="1010" cy="120" r="46" fill="#ffe7c2" opacity=".9"/>
+    <path d="M60 330 C 360 120, 760 90, 1080 200" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="4 10" opacity=".55"/>
+    <g transform="translate(760 118) rotate(8)"><path d="M0 0 l22 -3 l8 -10 l5 1 l-4 11 l12 -1 l4 -5 l4 0 l-2 7 l2 7 l-4 0 l-4 -5 l-12 -1 l4 11 l-5 1 l-8 -10 z" fill="#fff"/></g>
+    <path d="M620 420 L820 250 Q 840 236 860 250 L1060 420 Z" fill="#2b3a66" opacity=".85"/>
+    <path d="M790 276 L820 250 Q 840 236 860 250 L890 276 Q 872 268 858 280 Q 842 266 826 280 Q 810 268 790 276 Z" fill="#fff" opacity=".9"/>
+    <path d="M0 420 L0 350 Q 160 300 320 352 T 640 360 T 960 370 T 1200 340 L1200 420 Z" fill="#1c2b52" opacity=".55"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="eyebrow">TPE ✈ JAPAN · FARE TRACKER</div>
+    <h1>下一站，日本。</h1>
+    <p class="sub">從台北出發，追蹤東京・大阪・福岡・札幌・沖繩的來回機票價格</p>
+    <div class="trip-chip" id="trip-chip" hidden></div>
+    <div class="updated" id="updated"></div>
+  </div>
+</header>
+
+<main>
+  <div class="tabs-bar">
+    <div class="label">DEPARTURE · 選擇出發期間</div>
+    <div class="tabs" id="month-tabs"></div>
+  </div>
+
+  <div class="passes" id="cards"></div>
 
   <section class="panel">
-    <h2 id="chart-title">價格走勢</h2>
-    <div class="tabs" id="month-tabs"></div>
+    <div class="panel-head"><h2 id="chart-title">價格走勢</h2></div>
     <div class="chart-wrap"><canvas id="chart"></canvas></div>
   </section>
 
   <section class="panel">
-    <h2 id="table-title">最便宜的航班</h2>
-    <div class="table-wrap" id="offers"></div>
-    <p class="muted">價格來自 Travelpayouts 快取資料，可能與即時價格不同，下訂前請點連結確認。</p>
+    <div class="panel-head">
+      <h2 id="table-title">航班一覽</h2>
+      <span class="toggle" id="eva-toggle">⭐ 只看長榮</span>
+    </div>
+    <div id="offers"></div>
+    <p class="note">月份價格來自 Travelpayouts 快取資料；📌 指定行程為 Google Flights 即時價格（每日更新）。廉航票價通常不含托運行李，下訂前請點連結確認。</p>
   </section>
+
+  <footer><span class="jp">よい旅を。</span>祝旅途愉快 ✈</footer>
 </main>
 
 <script>
-const COLORS = ["#2458d6", "#d6452b", "#12805c", "#8a3ffc", "#c77c00"];
-const state = { latest: null, history: [], city: null, month: "all", chart: null };
-const fmt = n => n == null ? "—" : n.toLocaleString("zh-TW");
+const CITY = {
+  TYO: { jp: "東京", en: "TOKYO",   icon: "🗼", color: "#d6402b", ap: "NRT·HND" },
+  OSA: { jp: "大阪", en: "OSAKA",   icon: "🏯", color: "#e0782a", ap: "KIX·ITM" },
+  FUK: { jp: "福岡", en: "FUKUOKA", icon: "🍜", color: "#b98a2e", ap: "FUK" },
+  SPK: { jp: "札幌", en: "SAPPORO", icon: "❄️", color: "#3a74c9", ap: "CTS" },
+  OKA: { jp: "沖縄", en: "OKINAWA", icon: "🌺", color: "#169c90", ap: "OKA" },
+};
+const AIRLINE = { BR: "長榮", CI: "華航", JX: "星宇", IT: "台灣虎航", MM: "樂桃", TR: "酷航", JL: "日航", NH: "全日空",
+  CX: "國泰", D7: "亞航X", AK: "亞航", FD: "泰亞航", GK: "捷星日本", "7C": "濟州", HD: "北海道國際", UO: "香港快運" };
+const EVA = "#0b7a53";
+const state = { latest: null, history: [], city: null, month: "all", evaOnly: false, chart: null };
+const fmt = n => n == null ? "—" : Math.round(n).toLocaleString("zh-TW");
 const $ = id => document.getElementById(id);
+const md = s => s ? `${+s.slice(5, 7)}/${+s.slice(8, 10)}` : "";
+const airlineName = a => AIRLINE[a] ?? a ?? "";
 
 async function load() {
   try {
@@ -79,13 +200,13 @@ async function load() {
     state.latest = latest;
     state.history = history;
   } catch (e) {
-    document.querySelector("main").insertAdjacentHTML("beforeend",
-      '<div class="panel empty">還沒有資料。請先在 GitHub Actions 手動執行一次「Track fares」。</div>');
+    $("cards").innerHTML = '<div class="panel empty">還沒有資料。請先在 GitHub Actions 手動執行一次「Track fares」。</div>';
     return;
   }
-  $("updated").textContent = "更新時間：" + state.latest.updated_at.replace("T", " ");
+  $("updated").textContent = "最後更新 " + state.latest.updated_at.replace("T", " ");
   state.city = cities()[0]?.code;
   state.month = periods().find(p => p.kind === "trip")?.id ?? "all";
+  renderHero();
   render();
 }
 
@@ -97,7 +218,8 @@ function cities() {
 // 期間：指定行程排前面，其後是各月份
 function periods() {
   const seen = new Map();
-  for (const r of state.latest.routes) if (!seen.has(r.month)) seen.set(r.month, { id: r.month, label: r.label ?? r.month, kind: r.kind ?? "month" });
+  for (const r of state.latest.routes) if (!seen.has(r.month))
+    seen.set(r.month, { id: r.month, label: r.label ?? r.month, kind: r.kind ?? "month", depart: r.depart, ret: r.return });
   const list = [...seen.values()];
   return [...list.filter(p => p.kind === "trip"), ...list.filter(p => p.kind !== "trip").sort((a, b) => a.id.localeCompare(b.id))];
 }
@@ -110,62 +232,95 @@ function targetOf(code) {
   const rs = selectedRoutes(code);
   return rs.length ? rs[0].target_price : null;
 }
-const monthLabel = m => m.replace("-", " 年 ").replace(/ 0?(\d+)$/, " $1") + " 月";
+const offersOf = code => selectedRoutes(code).flatMap(r => r.offers).sort((a, b) => a.price - b.price);
+const monthLabel = m => `${m.slice(2, 4)} 年 ${+m.slice(5)} 月`;
+
+function renderHero() {
+  const trip = periods().find(p => p.kind === "trip");
+  if (!trip?.depart) return;
+  const today = new Date(new Date().toDateString());
+  const days = Math.round((new Date(trip.depart + "T00:00") - today) / 864e5);
+  const nights = trip.ret ? Math.round((new Date(trip.ret) - new Date(trip.depart)) / 864e5) : null;
+  $("trip-chip").innerHTML = `📌 ${trip.label.replace(/\s*\d+\/\d+.*$/, "")}
+    <b>${md(trip.depart)} → ${md(trip.ret)}</b>${nights ? `<span>${nights + 1} 天 ${nights} 夜</span>` : ""}
+    <span>出發倒數 <span class="countdown">${days}</span> 天</span>`;
+  $("trip-chip").hidden = false;
+}
 
 function render() { renderTabs(); renderCards(); renderChart(); renderOffers(); }
 
-function renderCards() {
-  $("cards").innerHTML = cities().map(c => {
-    const best = selectedRoutes(c.code).flatMap(r => r.offers).sort((a, b) => a.price - b.price)[0];
-    const target = targetOf(c.code);
-    const good = best && target != null && best.price <= target;
-    const badge = !best ? '<span class="badge warn">無資料</span>'
-      : target == null ? '<span class="badge warn">未設目標</span>'
-      : good ? '<span class="badge good">低於目標</span>'
-      : `<span class="badge warn">差 ${fmt(best.price - target)}</span>`;
-    return `<div class="card ${c.code === state.city ? "active" : ""}" data-code="${c.code}">
-      <div class="city">${c.name} <span class="muted">${c.code}</span></div>
-      <div class="price">${best ? fmt(best.price) : "—"}</div>
-      <div class="muted">目標 ${fmt(target)}${best ? " · " + best.departure_at.slice(5, 10) + " 出發" : ""}</div>
-      <div style="margin-top:6px">${badge}</div></div>`;
-  }).join("");
-  document.querySelectorAll(".card").forEach(el => el.onclick = () => { state.city = el.dataset.code; render(); });
-}
-
 function renderTabs() {
-  const opts = [...periods().filter(p => p.kind === "trip").map(p => [p.id, "📌 " + p.label]),
-    ["all", "未來 12 個月"], ...monthIds().map(m => [m, monthLabel(m)])];
-  $("month-tabs").innerHTML = opts.map(([v, label]) =>
-    `<button class="${v === state.month ? "active" : ""}" data-m="${v}">${label}</button>`).join("");
+  const opts = [...periods().filter(p => p.kind === "trip").map(p => [p.id, "📌 " + p.label, "trip"]),
+    ["all", "未來 12 個月", ""], ...monthIds().map(m => [m, monthLabel(m), ""])];
+  $("month-tabs").innerHTML = opts.map(([v, label, cls]) =>
+    `<button class="${cls} ${v === state.month ? "active" : ""}" data-m="${v}">${label}</button>`).join("");
   document.querySelectorAll("#month-tabs button").forEach(b => b.onclick = () => { state.month = b.dataset.m; render(); });
 }
 
+function renderCards() {
+  $("cards").innerHTML = cities().map(c => {
+    const m = CITY[c.code] ?? { jp: c.name, en: c.code, icon: "✈️", color: "#d6402b", ap: c.code };
+    const offers = offersOf(c.code);
+    const best = offers[0];
+    const eva = offers.find(o => o.preferred);
+    const target = targetOf(c.code);
+    const badge = !best ? '<span class="badge none">無資料</span>'
+      : target == null ? '<span class="badge none">未設目標</span>'
+      : best.price <= target ? '<span class="badge good">低於目標</span>'
+      : `<span class="badge warn">差 ${fmt(best.price - target)}</span>`;
+    return `<div class="pass ${c.code === state.city ? "active" : ""}" data-code="${c.code}" style="--c:${m.color}">
+      <div class="pass-main">
+        <div class="route">TPE<span class="plane">✈</span>${m.ap}</div>
+        <div class="city"><span class="kanji">${m.jp}</span><span class="en">${m.en}</span></div>
+        <div class="price-label">最低來回</div>
+        <div class="price"><small>NT$</small>${best ? fmt(best.price) : "—"}</div>
+        <div class="meta">${best ? `${md(best.departure_at)} 出發 · ${airlineName(best.airline)}${best.transfers === 0 ? " · 直飛" : ""}` : "這段期間暫無報價"}</div>
+        ${eva ? `<div class="eva-line"><span>⭐ 長榮最低</span><b>NT$ ${fmt(eva.price)}</b></div>`
+              : `<div class="eva-line none"><span>⭐ 長榮</span><span>暫無報價</span></div>`}
+      </div>
+      <div class="pass-stub">
+        <div class="stub-icon">${m.icon}</div>
+        <div class="stub-target">目標<b>${fmt(target)}</b></div>
+        ${badge}
+      </div></div>`;
+  }).join("");
+  document.querySelectorAll(".pass").forEach(el => el.onclick = () => { state.city = el.dataset.code; render(); });
+}
+
 function renderChart() {
-  const city = cities().find(c => c.code === state.city);
-  $("chart-title").textContent = `價格走勢：${city?.name ?? ""}`;
+  const m = CITY[state.city] ?? {};
+  $("chart-title").innerHTML = `${m.icon ?? ""} ${m.jp ?? ""}<span class="jp">價格走勢</span>`;
   const ids = state.month === "all" ? monthIds() : [state.month];
   const rows = state.history.filter(h => h.code === state.city && ids.includes(h.month));
-  // 每次抓價取所選期間的最低價
-  const byTime = new Map();
+  // 每次抓價取所選期間的最低價（全部 / 長榮）
+  const low = new Map(), eva = new Map();
   for (const h of rows) {
-    const x = h.t.slice(0, 16).replace("T", " ");
-    byTime.set(x, Math.min(byTime.get(x) ?? Infinity, h.price));
+    const x = h.t.slice(5, 16).replace("T", " ").replace("-", "/");
+    low.set(x, Math.min(low.get(x) ?? Infinity, h.price));
+    if (h.pref != null) eva.set(x, Math.min(eva.get(x) ?? Infinity, h.pref));
   }
-  const labels = [...byTime.keys()].sort();
+  const labels = [...low.keys()].sort();
   const target = targetOf(state.city);
   const datasets = [{
-    label: "最低價", data: labels.map(x => byTime.get(x)),
-    borderColor: COLORS[0], backgroundColor: COLORS[0], tension: .25, pointRadius: 3, borderWidth: 2,
+    label: "最低價", data: labels.map(x => low.get(x)), borderColor: m.color, backgroundColor: m.color + "22",
+    fill: true, tension: .3, pointRadius: 3, borderWidth: 2.5,
   }];
-  if (target != null) datasets.push({ label: "目標價", data: labels.map(() => target), borderColor: "#999", borderDash: [6, 4], pointRadius: 0, borderWidth: 1 });
+  if (eva.size) datasets.push({ label: "長榮最低", data: labels.map(x => eva.get(x) ?? null), borderColor: EVA, backgroundColor: EVA,
+    tension: .3, pointRadius: 3, borderWidth: 2, spanGaps: true });
+  if (target != null) datasets.push({ label: "目標價", data: labels.map(() => target), borderColor: "#9aa0ab",
+    borderDash: [6, 5], pointRadius: 0, borderWidth: 1.2 });
   state.chart?.destroy();
+  Chart.defaults.font.family = getComputedStyle(document.body).fontFamily;
+  Chart.defaults.color = "#6f7686";
   state.chart = new Chart($("chart"), {
     type: "line",
     data: { labels, datasets },
     options: {
       maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
-      scales: { x: { ticks: { maxTicksLimit: 8 } }, y: { ticks: { callback: v => fmt(v) } } },
-      plugins: { tooltip: { callbacks: { label: c => `${c.dataset.label}：${fmt(c.parsed.y)}` } } },
+      scales: { x: { grid: { display: false }, ticks: { maxTicksLimit: 8 } },
+                y: { grid: { color: "#efe8dc" }, ticks: { callback: v => fmt(v) } } },
+      plugins: { legend: { labels: { usePointStyle: true, boxWidth: 8 } },
+        tooltip: { callbacks: { label: c => `${c.dataset.label}：NT$ ${fmt(c.parsed.y)}` } } },
     },
   });
 }
@@ -176,34 +331,46 @@ function gflights(o) {
 }
 
 function renderOffers() {
-  const city = cities().find(c => c.code === state.city);
-  $("table-title").textContent = `最便宜的航班：${city?.name ?? ""}`;
+  const m = CITY[state.city] ?? {};
+  $("table-title").innerHTML = `${m.jp ?? ""}<span class="jp">航班一覽</span>`;
+  $("eva-toggle").classList.toggle("on", state.evaOnly);
   const target = targetOf(state.city);
-  const offers = selectedRoutes(state.city).flatMap(r => r.offers).sort((a, b) => a.price - b.price).slice(0, 15);
-  // 指定行程若來自 Google Flights，顯示查詢時間與 Google 的價格判斷
+  let offers = offersOf(state.city);
+  if (state.evaOnly) offers = offers.filter(o => o.preferred);
+  offers = offers.slice(0, 15);
+
   const r0 = selectedRoutes(state.city)[0];
-  const LEVEL = { low: "偏低 👍", typical: "一般", high: "偏高" };
+  const LEVEL = { low: ["low", "偏低 👍"], typical: ["", "一般"], high: ["high", "偏高"] };
   const ins = r0?.insights;
-  const info = r0?.source === "google" ? `<p class="muted">Google Flights 即時價格（查詢時間 ${(r0.checked_at ?? "—").replace("T", " ")}）` +
-    (ins ? `　價格判斷：<b>${LEVEL[ins.level] ?? ins.level ?? "—"}</b>` +
-      (ins.typical_range ? `　常見價格範圍 ${fmt(ins.typical_range[0])}–${fmt(ins.typical_range[1])}` : "") : "") + "</p>" : "";
-  if (!offers.length) { $("offers").innerHTML = info + '<div class="empty">這段期間沒有價格資料</div>'; return; }
+  const info = r0?.source === "google" ? `<div class="insight">
+      <span>🔎 Google Flights 即時價格・${(r0.checked_at ?? "—").replace("T", " ")} 查詢</span>
+      ${ins?.level ? `<span>價格判斷 <span class="lvl ${LEVEL[ins.level]?.[0] ?? ""}">${LEVEL[ins.level]?.[1] ?? ins.level}</span></span>` : ""}
+      ${ins?.typical_range ? `<span>常見價格 NT$ ${fmt(ins.typical_range[0])}–${fmt(ins.typical_range[1])}</span>` : ""}
+    </div>` : "";
+  if (!offers.length) {
+    $("offers").innerHTML = info + `<div class="empty">${state.evaOnly ? "這段期間沒有長榮的報價" : "這段期間沒有價格資料"}</div>`;
+    return;
+  }
   const stops = n => n == null ? "" : n === 0 ? "直飛" : `轉 ${n} 次`;
-  $("offers").innerHTML = info + `<table><thead><tr>
-      <th>價格</th><th>去程</th><th>回程</th><th>天數</th><th>航空</th><th>機場</th><th>轉機</th><th>連結</th>
+  $("offers").innerHTML = info + `<div class="table-wrap"><table><thead><tr>
+      <th>價格 (NT$)</th><th>去程</th><th>回程</th><th>天數</th><th>航空</th><th>抵達</th><th>轉機</th><th>連結</th>
     </tr></thead><tbody>${offers.map(o => {
-      const days = o.return_at ? Math.round((new Date(o.return_at.slice(0, 10)) - new Date(o.departure_at.slice(0, 10))) / 864e5) : "—";
-      return `<tr class="${target != null && o.price <= target ? "good" : ""}">
+      const days = o.return_at ? Math.round((new Date(o.return_at.slice(0, 10)) - new Date(o.departure_at.slice(0, 10))) / 864e5) + 1 : "—";
+      const depTime = o.departure_at.length > 10 ? " " + o.departure_at.slice(11, 16) : "";
+      return `<tr class="${target != null && o.price <= target ? "good" : ""} ${o.preferred ? "eva" : ""}">
         <td class="num">${fmt(o.price)}</td>
-        <td>${o.departure_at.slice(0, 10)}</td><td>${o.return_at ? o.return_at.slice(0, 10) : "單程"}</td>
-        <td>${days}</td><td>${o.airline ?? ""} ${o.flight_number ?? ""}</td><td>${o.destination_airport ?? ""}</td>
+        <td>${md(o.departure_at)}${depTime}</td><td>${o.return_at ? md(o.return_at) : "單程"}</td>
+        <td>${days}</td>
+        <td>${o.preferred ? '<span class="eva-tag">長榮</span>' : ""}${airlineName(o.airline)} <span style="color:var(--muted)">${o.flight_number ?? ""}</span></td>
+        <td>${o.destination_airport ?? ""}</td>
         <td>${stops(o.transfers)}${o.return_at && o.return_transfers != null ? " / " + stops(o.return_transfers) : ""}</td>
         <td>${o.source === "google" ? `<a href="${o.link ?? gflights(o)}" target="_blank" rel="noopener">Google Flights</a>`
           : (o.link ? `<a href="${o.link}" target="_blank" rel="noopener">Aviasales</a> · ` : "") + `<a href="${gflights(o)}" target="_blank" rel="noopener">Google</a>`}</td>
       </tr>`;
-    }).join("")}</tbody></table>`;
+    }).join("")}</tbody></table></div>`;
 }
 
+$("eva-toggle").onclick = () => { state.evaOnly = !state.evaOnly; renderOffers(); };
 load();
 </script>
 </body>
