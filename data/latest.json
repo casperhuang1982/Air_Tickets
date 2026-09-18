@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-18T14:13+08:00",
+ "updated_at": "2026-09-18T15:02+08:00",
  "currency": "twd",
  "routes": [
   {
@@ -357,18 +357,6 @@
      "transfers": 0,
      "return_transfers": 0,
      "link": "https://www.aviasales.com/search/TPE3011TYO08121?t=IT17960721001796086200000175TPEHND17967060001796716500000235HNDTPE_3a409c0425d7688318e6f2b38e08e50f_19250&search_date=17092026&expected_price_uuid=01a0ad9d-58a7-8040-addf-5a37336d1996&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=bGtWPM25o3gIjJ2m3RBR5Q&expected_price_source=share&expected_price_currency=twd&expected_price=7282",
-     "preferred": false
-    },
-    {
-     "price": 7456,
-     "airline": "MM",
-     "flight_number": "620",
-     "destination_airport": "NRT",
-     "departure_at": "2026-11-01T02:25:00+08:00",
-     "return_at": "2026-11-07T22:25:00+09:00",
-     "transfers": 0,
-     "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE0111TYO07111?t=GK17934999001793514600000185TPENRT17940903001794101400000245NRTTPE_88c5957147b56d41b84a1edc5f183f6f_19781&search_date=11092026&expected_price_uuid=01a08f3a-2da3-8030-248f-96ac819cce49&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=BL7OgMlQOU0AFVtGSDVEaQ&expected_price_source=share&expected_price_currency=twd&expected_price=7456",
      "preferred": false
     },
     {
@@ -2286,18 +2274,6 @@
      "return_transfers": 1,
      "link": "https://www.aviasales.com/search/TPE0512SPK11121?t=MM17964909001796546400000865TPENRTCTS17970216001797092100001235CTSNRTTPE_ad235f304dea453a46d388fed06bb303_31073&search_date=11092026&expected_price_uuid=01a08fbc-9dd6-8030-2f17-9376cc796a67&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=ce2R--fXOskEJlS8S5nv5w&expected_price_source=share&expected_price_currency=twd&expected_price=11688",
      "preferred": false
-    },
-    {
-     "price": 16423,
-     "airline": "OZ",
-     "flight_number": "714",
-     "destination_airport": "CTS",
-     "departure_at": "2026-12-25T17:05:00+08:00",
-     "return_at": "2026-12-31T12:00:00+09:00",
-     "transfers": 1,
-     "return_transfers": 1,
-     "link": "https://www.aviasales.com/search/TPE2512SPK31121?t=OZ17982183001798281900001000TPEICNCTS17987184001798818900001735CTSICNTPE_c20a8ade07cf8a87334347803ceaa7f5_43571&search_date=11092026&expected_price_uuid=01a08f41-8594-8030-a4c7-14280f22e8c2&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=6GLEa6VN_uFJr1hdI_Pccg&expected_price_source=share&expected_price_currency=twd&expected_price=16423",
-     "preferred": false
     }
    ]
   },
@@ -3017,6 +2993,327 @@
    "label": "2027-09",
    "kind": "month",
    "target_price": 4500,
+   "offers": []
+  },
+  {
+   "key": "TPE-NGO-2027-summer",
+   "code": "NGO",
+   "name": "名古屋",
+   "month": "2027-summer",
+   "label": "2027 暑假 7/29–8/5",
+   "kind": "trip",
+   "target_price": null,
+   "depart": "2027-07-29",
+   "return": "2027-08-05",
+   "insights": {
+    "lowest": 13759,
+    "level": "high",
+    "typical_range": [
+     10500,
+     13500
+    ]
+   },
+   "checked_at": "2026-09-18T15:02+08:00",
+   "source": "google",
+   "offers": [
+    {
+     "price": 13759,
+     "airline": "中華航空",
+     "flight_number": "CI 150",
+     "destination_airport": "NGO",
+     "departure_at": "2027-07-29T17:15",
+     "return_at": "2027-08-05",
+     "transfers": 0,
+     "return_transfers": null,
+     "duration_min": 170,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI3LTA3LTI5agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjctMDgtMDVqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "source": "google",
+     "preferred": false
+    },
+    {
+     "price": 15340,
+     "airline": "日本航空",
+     "flight_number": "JL 802, JL 3087",
+     "destination_airport": "NGO",
+     "departure_at": "2027-07-29T10:00",
+     "return_at": "2027-08-05",
+     "transfers": 1,
+     "return_transfers": null,
+     "duration_min": 550,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI3LTA3LTI5agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjctMDgtMDVqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "source": "google",
+     "preferred": false
+    },
+    {
+     "price": 16351,
+     "airline": "中華航空",
+     "flight_number": "CI 154",
+     "destination_airport": "NGO",
+     "departure_at": "2027-07-29T07:30",
+     "return_at": "2027-08-05",
+     "transfers": 0,
+     "return_transfers": null,
+     "duration_min": 170,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI3LTA3LTI5agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjctMDgtMDVqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "source": "google",
+     "preferred": false
+    },
+    {
+     "price": 16526,
+     "airline": "全日空航空",
+     "flight_number": "NH 854, NH 239, NH 434",
+     "destination_airport": "NGO",
+     "departure_at": "2027-07-29T16:50",
+     "return_at": "2027-08-05",
+     "transfers": 2,
+     "return_transfers": null,
+     "duration_min": 980,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI3LTA3LTI5agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjctMDgtMDVqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "source": "google",
+     "preferred": false
+    },
+    {
+     "price": 16526,
+     "airline": "全日空航空",
+     "flight_number": "NH 854, NH 1075, NH 434",
+     "destination_airport": "NGO",
+     "departure_at": "2027-07-29T16:50",
+     "return_at": "2027-08-05",
+     "transfers": 2,
+     "return_transfers": null,
+     "duration_min": 980,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI3LTA3LTI5agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjctMDgtMDVqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "source": "google",
+     "preferred": false
+    },
+    {
+     "price": 16747,
+     "airline": "韓亞航空 / 大韓航空",
+     "flight_number": "OZ 712, KE 749",
+     "destination_airport": "NGO",
+     "departure_at": "2027-07-29T12:25",
+     "return_at": "2027-08-05",
+     "transfers": 1,
+     "return_transfers": null,
+     "duration_min": 455,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI3LTA3LTI5agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjctMDgtMDVqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "source": "google",
+     "preferred": false
+    },
+    {
+     "price": 16793,
+     "airline": "國泰航空",
+     "flight_number": "CX 530",
+     "destination_airport": "NGO",
+     "departure_at": "2027-07-29T11:30",
+     "return_at": "2027-08-05",
+     "transfers": 0,
+     "return_transfers": null,
+     "duration_min": 180,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI3LTA3LTI5agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjctMDgtMDVqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "source": "google",
+     "preferred": false
+    },
+    {
+     "price": 17307,
+     "airline": "大韓航空",
+     "flight_number": "KE 2026, KE 749",
+     "destination_airport": "NGO",
+     "departure_at": "2027-07-29T13:20",
+     "return_at": "2027-08-05",
+     "transfers": 1,
+     "return_transfers": null,
+     "duration_min": 400,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI3LTA3LTI5agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjctMDgtMDVqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "source": "google",
+     "preferred": false
+    },
+    {
+     "price": 18730,
+     "airline": "全日空航空",
+     "flight_number": "NH 852, NH 85",
+     "destination_airport": "NGO",
+     "departure_at": "2027-07-29T13:30",
+     "return_at": "2027-08-05",
+     "transfers": 1,
+     "return_transfers": null,
+     "duration_min": 370,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI3LTA3LTI5agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjctMDgtMDVqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "source": "google",
+     "preferred": false
+    },
+    {
+     "price": 23936,
+     "airline": "星宇航空",
+     "flight_number": "JX 838",
+     "destination_airport": "NGO",
+     "departure_at": "2027-07-29T14:55",
+     "return_at": "2027-08-05",
+     "transfers": 0,
+     "return_transfers": null,
+     "duration_min": 170,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI3LTA3LTI5agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjctMDgtMDVqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "source": "google",
+     "preferred": false
+    }
+   ]
+  },
+  {
+   "key": "TPE-NGO-2026-10",
+   "code": "NGO",
+   "name": "名古屋",
+   "month": "2026-10",
+   "label": "2026-10",
+   "kind": "month",
+   "target_price": 7500,
+   "offers": []
+  },
+  {
+   "key": "TPE-NGO-2026-11",
+   "code": "NGO",
+   "name": "名古屋",
+   "month": "2026-11",
+   "label": "2026-11",
+   "kind": "month",
+   "target_price": 7500,
+   "offers": []
+  },
+  {
+   "key": "TPE-NGO-2026-12",
+   "code": "NGO",
+   "name": "名古屋",
+   "month": "2026-12",
+   "label": "2026-12",
+   "kind": "month",
+   "target_price": 7500,
+   "offers": [
+    {
+     "price": 12646,
+     "airline": "IT",
+     "flight_number": "706",
+     "destination_airport": "NGO",
+     "departure_at": "2026-12-31T15:05:00+08:00",
+     "return_at": "2027-01-03T22:50:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE3112NGO03011?t=MM17987295001798743000000165TPENGO17990166001799026200000220NGOTPE_80c54b27f77fd2c243d6aeeb052e6d8c_33615&search_date=18092026&expected_price_uuid=01a0b270-1596-8040-6c7e-ce724f732996&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=dM37UAUCNwdLGp45Z4VqbQ&expected_price_source=share&expected_price_currency=twd&expected_price=12646",
+     "preferred": false
+    },
+    {
+     "price": 12848,
+     "airline": "MM",
+     "flight_number": "724",
+     "destination_airport": "NGO",
+     "departure_at": "2026-12-22T02:55:00+08:00",
+     "return_at": "2026-12-27T22:50:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE2212NGO27121?t=MM17979081001797920700000150TPENGO17984118001798421400000220NGOTPE_be5c32f04a80778bb0c770f795249486_34167&search_date=12092026&expected_price_uuid=01a094ff-bfb8-8030-2431-c5f633291d6c&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=Ghg2lReSqkqGABw7KMnpng&expected_price_source=share&expected_price_currency=twd&expected_price=12848",
+     "preferred": false
+    }
+   ]
+  },
+  {
+   "key": "TPE-NGO-2027-01",
+   "code": "NGO",
+   "name": "名古屋",
+   "month": "2027-01",
+   "label": "2027-01",
+   "kind": "month",
+   "target_price": 7500,
+   "offers": [
+    {
+     "price": 13344,
+     "airline": "OZ",
+     "flight_number": "714",
+     "destination_airport": "NGO",
+     "departure_at": "2027-01-22T17:05:00+08:00",
+     "return_at": "2027-01-26T10:55:00+09:00",
+     "transfers": 1,
+     "return_transfers": 1,
+     "link": "https://www.aviasales.com/search/TPE2201NGO26011?t=OZ18006375001800724800001395TPEICNNGO18009609001801043400001435NGOICNTPE_42592a33ea0a4c4a3c1489ad43b350ce_35278&search_date=15092026&expected_price_uuid=01a0a57a-322f-8030-e4ad-b04ef4fc999f&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=05odmPCCbaXceOKhJ6eb0A&expected_price_source=share&expected_price_currency=twd&expected_price=13344",
+     "preferred": false
+    }
+   ]
+  },
+  {
+   "key": "TPE-NGO-2027-02",
+   "code": "NGO",
+   "name": "名古屋",
+   "month": "2027-02",
+   "label": "2027-02",
+   "kind": "month",
+   "target_price": 7500,
+   "offers": []
+  },
+  {
+   "key": "TPE-NGO-2027-03",
+   "code": "NGO",
+   "name": "名古屋",
+   "month": "2027-03",
+   "label": "2027-03",
+   "kind": "month",
+   "target_price": 7500,
+   "offers": []
+  },
+  {
+   "key": "TPE-NGO-2027-04",
+   "code": "NGO",
+   "name": "名古屋",
+   "month": "2027-04",
+   "label": "2027-04",
+   "kind": "month",
+   "target_price": 7500,
+   "offers": []
+  },
+  {
+   "key": "TPE-NGO-2027-05",
+   "code": "NGO",
+   "name": "名古屋",
+   "month": "2027-05",
+   "label": "2027-05",
+   "kind": "month",
+   "target_price": 7500,
+   "offers": []
+  },
+  {
+   "key": "TPE-NGO-2027-06",
+   "code": "NGO",
+   "name": "名古屋",
+   "month": "2027-06",
+   "label": "2027-06",
+   "kind": "month",
+   "target_price": 7500,
+   "offers": []
+  },
+  {
+   "key": "TPE-NGO-2027-07",
+   "code": "NGO",
+   "name": "名古屋",
+   "month": "2027-07",
+   "label": "2027-07",
+   "kind": "month",
+   "target_price": 7500,
+   "offers": []
+  },
+  {
+   "key": "TPE-NGO-2027-08",
+   "code": "NGO",
+   "name": "名古屋",
+   "month": "2027-08",
+   "label": "2027-08",
+   "kind": "month",
+   "target_price": 7500,
+   "offers": []
+  },
+  {
+   "key": "TPE-NGO-2027-09",
+   "code": "NGO",
+   "name": "名古屋",
+   "month": "2027-09",
+   "label": "2027-09",
+   "kind": "month",
+   "target_price": 7500,
    "offers": []
   }
  ]
