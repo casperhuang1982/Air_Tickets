@@ -1,0 +1,39 @@
+name: Track fares
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # 每 6 小時（UTC），避開整點尖峰
+  workflow_dispatch:          # 可在 Actions 頁面手動觸發
+
+permissions:
+  contents: write
+
+concurrency:
+  group: track
+  cancel-in-progress: false
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch prices
+        env:
+          TP_TOKEN: ${{ secrets.TP_TOKEN }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
+        run: python tracker.py
+
+      - name: Commit data
+        run: |
+          git config user.name "fare-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "data: update prices $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
