@@ -53,6 +53,12 @@
       "name": "沖繩",
       "target_price": 4500,
       "airports": "OKA"
+    },
+    {
+      "code": "NGO",
+      "name": "名古屋",
+      "target_price": 7500,
+      "airports": "NGO"
     }
   ]
 }

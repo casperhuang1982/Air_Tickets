@@ -24,7 +24,6 @@ DATA = ROOT / "data"
 HISTORY_FILE = DATA / "history.json"
 LATEST_FILE = DATA / "latest.json"
 NOTIFIED_FILE = DATA / "notified.json"
-SERP_STATE_FILE = DATA / "serpapi.json"
 
 API_URL = "https://api.travelpayouts.com/aviasales/v3/prices_for_dates"
 SERP_URL = "https://serpapi.com/search.json"
@@ -249,19 +248,17 @@ def main():
     history = load_json(HISTORY_FILE, [])
     prev_routes = {r["key"]: r for r in load_json(LATEST_FILE, {}).get("routes", [])}
     serp_key = os.environ.get("SERPAPI_KEY")
-    last_serp = load_json(SERP_STATE_FILE, {}).get("last_run")
-    serp_due = bool(serp_key) and (
-        not last_serp or datetime.now(TW) - datetime.fromisoformat(last_serp) >= SERP_MIN_INTERVAL
-    )
     if serp_key:
         serp_account(serp_key)
-        if not serp_due:
-            print(f"SerpApi 上次查詢 {last_serp}，未滿 20 小時，沿用上次結果")
+
+    def serp_due(key):
+        """每條航線各自計時：從沒查過、或距上次查詢已滿 20 小時才查。"""
+        last = prev_routes.get(key, {}).get("checked_at")
+        return not last or datetime.now(TW) - datetime.fromisoformat(last) >= SERP_MIN_INTERVAL
     notified = load_json(NOTIFIED_FILE, {})
     latest = {"updated_at": now, "currency": cfg.get("currency", "twd"), "routes": []}
     alerts = []
     errors = 0
-    serp_ok = False
 
     # 要查的期間：指定行程（固定去回日期）＋ 未來每個月份
     periods = [
@@ -283,11 +280,10 @@ def main():
             fresh = True
             try:
                 if p["kind"] == "trip" and serp_key:
-                    if serp_due:
+                    if serp_due(key):
                         offers, route["insights"] = fetch_serp_trip(cfg, d["code"], p, serp_key)
                         offers = pick_offers(cfg, offers)
                         route["checked_at"] = now
-                        serp_ok = True
                     else:  # 沿用上次 SerpApi 結果，不寫入歷史
                         prev = prev_routes.get(key, {})
                         offers = pick_offers(cfg, prev.get("offers", []))
@@ -343,8 +339,6 @@ def main():
     save_json(LATEST_FILE, latest)
     save_json(HISTORY_FILE, history)
     save_json(NOTIFIED_FILE, notified)
-    if serp_ok:  # 有查成功才計時，失敗的話下次排程會重試
-        save_json(SERP_STATE_FILE, {"last_run": now})
 
     if errors and not latest["routes"]:
         sys.exit("所有航線都抓取失敗")

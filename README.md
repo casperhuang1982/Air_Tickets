@@ -22,7 +22,7 @@ GitHub Actions 每 6 小時抓一次 Travelpayouts 價格，存進 `data/`，低
 
 編輯 `config.json`：
 
-- `destinations`：城市代碼（TYO 東京、OSA 大阪、FUK 福岡、SPK 札幌、OKA 沖繩）與目標價
+- `destinations`：城市代碼（TYO 東京、OSA 大阪、NGO 名古屋、FUK 福岡、SPK 札幌、OKA 沖繩）與目標價
 - `months_ahead`：追蹤未來幾個月（從下個月起算）；或在 `months` 直接指定，如 `["2027-01", "2027-02"]`
 - `trip_days_min` / `trip_days_max`：來回行程天數範圍
 - `one_way`：`true` 改追單程
