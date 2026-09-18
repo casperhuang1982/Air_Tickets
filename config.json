@@ -8,10 +8,30 @@
   "trip_days_max": 8,
   "direct_only": false,
   "destinations": [
-    { "code": "TYO", "name": "東京", "target_price": 11000 },
-    { "code": "OSA", "name": "大阪", "target_price": 10000 },
-    { "code": "FUK", "name": "福岡", "target_price": 9000 },
-    { "code": "SPK", "name": "札幌", "target_price": 13000 },
-    { "code": "OKA", "name": "沖繩", "target_price": 7000 }
+    {
+      "code": "TYO",
+      "name": "東京",
+      "target_price": 6000
+    },
+    {
+      "code": "OSA",
+      "name": "大阪",
+      "target_price": 6000
+    },
+    {
+      "code": "FUK",
+      "name": "福岡",
+      "target_price": 6500
+    },
+    {
+      "code": "SPK",
+      "name": "札幌",
+      "target_price": 7000
+    },
+    {
+      "code": "OKA",
+      "name": "沖繩",
+      "target_price": 4500
+    }
   ]
 }

@@ -112,7 +112,7 @@ def send_email(subject, html):
     password = os.environ.get("GMAIL_APP_PASSWORD")
     if not user or not password:
         print("未設定 GMAIL_USER / GMAIL_APP_PASSWORD，略過寄信")
-        return
+        return False
     msg = EmailMessage()
     msg["Subject"] = subject
     msg["From"] = user
@@ -123,6 +123,7 @@ def send_email(subject, html):
         smtp.login(user, password)
         smtp.send_message(msg)
     print(f"已寄出通知：{subject}")
+    return True
 
 
 def build_email(alerts, currency):
@@ -189,21 +190,23 @@ def main():
             if best and best["price"] <= d["target_price"]:
                 last = notified.get(key)
                 if last is None or best["price"] < last:
-                    alerts.append({"name": f"{d['name']} {month}", "target": d["target_price"], "offer": best})
-                    notified[key] = best["price"]
+                    alerts.append({"key": key, "name": f"{d['name']} {month}", "target": d["target_price"], "offer": best})
             elif key in notified and (not best or best["price"] > d["target_price"]):
                 del notified[key]  # 價格回升，下次再跌破目標時重新通知
 
     cutoff = (datetime.now(TW) - timedelta(days=HISTORY_MAX_DAYS)).isoformat()
     history = [h for h in history if h["t"] >= cutoff]
 
+    # 信真的寄出才記錄已通知，未設定 Gmail 時下次仍會通知
+    if alerts:
+        names = "、".join(a["name"] for a in alerts)
+        if send_email(f"✈️ 機票降價：{names}", build_email(alerts, latest["currency"])):
+            for a in alerts:
+                notified[a["key"]] = a["offer"]["price"]
+
     save_json(LATEST_FILE, latest)
     save_json(HISTORY_FILE, history)
     save_json(NOTIFIED_FILE, notified)
-
-    if alerts:
-        names = "、".join(a["name"] for a in alerts)
-        send_email(f"✈️ 機票降價：{names}", build_email(alerts, latest["currency"]))
 
     if errors and not latest["routes"]:
         sys.exit("所有航線都抓取失敗")
