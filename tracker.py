@@ -11,6 +11,7 @@ import json
 import os
 import smtplib
 import sys
+import time
 import urllib.parse
 import urllib.request
 from datetime import date, datetime, timedelta, timezone
@@ -54,11 +55,11 @@ def target_months(cfg):
     return months
 
 
-def fetch_offers(cfg, dest, month, token):
+def fetch_offers(cfg, dest, departure_at, token, return_at=None):
     params = {
         "origin": cfg["origin"],
         "destination": dest,
-        "departure_at": month,
+        "departure_at": departure_at,
         "one_way": str(cfg.get("one_way", False)).lower(),
         "direct": str(cfg.get("direct_only", False)).lower(),
         "currency": cfg.get("currency", "twd"),
@@ -67,6 +68,8 @@ def fetch_offers(cfg, dest, month, token):
         "limit": 100,
         "token": token,
     }
+    if return_at:
+        params["return_at"] = return_at
     url = f"{API_URL}?{urllib.parse.urlencode(params)}"
     req = urllib.request.Request(url, headers={"Accept-Encoding": "identity"})
     with urllib.request.urlopen(req, timeout=30) as resp:
@@ -163,35 +166,46 @@ def main():
     alerts = []
     errors = 0
 
+    # 要查的期間：指定行程（固定去回日期）＋ 未來每個月份
+    periods = [
+        {"id": t["id"], "label": t["name"], "kind": "trip", "depart": t["depart"],
+         "return": t.get("return"), "target": t.get("target_price")}
+        for t in cfg.get("trips", []) if t["depart"] >= date.today().isoformat()
+    ] + [{"id": m, "label": m, "kind": "month", "depart": m, "return": None} for m in months]
+
     for d in cfg["destinations"]:
-        for month in months:
-            key = f"{cfg['origin']}-{d['code']}-{month}"
+        for p in periods:
+            key = f"{cfg['origin']}-{d['code']}-{p['id']}"
+            target = p["target"] if p["kind"] == "trip" else d["target_price"]
             try:
-                raw = fetch_offers(cfg, d["code"], month, token)
+                raw = fetch_offers(cfg, d["code"], p["depart"], token, p["return"])
             except Exception as e:  # 單一航線失敗不影響其他航線
                 print(f"[{key}] 抓取失敗：{e}")
                 errors += 1
                 continue
+            time.sleep(0.2)
 
-            offers = sorted(
-                (simplify(o) for o in raw if keep_offer(cfg, o)), key=lambda o: o["price"]
-            )[:OFFERS_KEPT]
+            # 指定行程已固定日期，不再套用天數篩選
+            kept = raw if p["kind"] == "trip" else [o for o in raw if keep_offer(cfg, o)]
+            offers = sorted((simplify(o) for o in kept), key=lambda o: o["price"])[:OFFERS_KEPT]
             best = offers[0] if offers else None
             print(f"[{key}] {len(raw)} 筆，符合條件 {len(offers)} 筆，最低 {best['price'] if best else '-'}")
 
             latest["routes"].append({
-                "key": key, "code": d["code"], "name": d["name"], "month": month,
-                "target_price": d["target_price"], "offers": offers,
+                "key": key, "code": d["code"], "name": d["name"], "month": p["id"],
+                "label": p["label"], "kind": p["kind"], "target_price": target, "offers": offers,
             })
             if best:
-                history.append({"t": now, "key": key, "code": d["code"], "month": month, "price": best["price"]})
+                history.append({"t": now, "key": key, "code": d["code"], "month": p["id"], "price": best["price"]})
 
+            if target is None:  # 沒設目標價只記錄、不通知
+                continue
             # 低於目標價，且比上次通知的價格更低才寄信，避免每次重複通知
-            if best and best["price"] <= d["target_price"]:
+            if best and best["price"] <= target:
                 last = notified.get(key)
                 if last is None or best["price"] < last:
-                    alerts.append({"key": key, "name": f"{d['name']} {month}", "target": d["target_price"], "offer": best})
-            elif key in notified and (not best or best["price"] > d["target_price"]):
+                    alerts.append({"key": key, "name": f"{d['name']} {p['label']}", "target": target, "offer": best})
+            elif key in notified:
                 del notified[key]  # 價格回升，下次再跌破目標時重新通知
 
     cutoff = (datetime.now(TW) - timedelta(days=HISTORY_MAX_DAYS)).isoformat()

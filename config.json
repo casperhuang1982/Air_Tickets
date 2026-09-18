@@ -1,12 +1,21 @@
 {
   "origin": "TPE",
   "currency": "twd",
-  "months_ahead": 3,
+  "months_ahead": 12,
   "months": [],
   "one_way": false,
   "trip_days_min": 3,
   "trip_days_max": 8,
   "direct_only": false,
+  "trips": [
+    {
+      "id": "2027-summer",
+      "name": "2027 暑假 7/29–8/5",
+      "depart": "2027-07-29",
+      "return": "2027-08-05",
+      "target_price": null
+    }
+  ],
   "destinations": [
     {
       "code": "TYO",

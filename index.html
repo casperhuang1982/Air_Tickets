@@ -85,38 +85,56 @@ async function load() {
   }
   $("updated").textContent = "更新時間：" + state.latest.updated_at.replace("T", " ");
   state.city = cities()[0]?.code;
+  state.month = periods().find(p => p.kind === "trip")?.id ?? "all";
   render();
 }
 
 function cities() {
   const seen = new Map();
-  for (const r of state.latest.routes) if (!seen.has(r.code)) seen.set(r.code, { code: r.code, name: r.name, target: r.target_price });
+  for (const r of state.latest.routes) if (!seen.has(r.code)) seen.set(r.code, { code: r.code, name: r.name });
   return [...seen.values()];
 }
-function months() { return [...new Set(state.latest.routes.map(r => r.month))].sort(); }
-function routesOf(code) { return state.latest.routes.filter(r => r.code === code); }
+// 期間：指定行程排前面，其後是各月份
+function periods() {
+  const seen = new Map();
+  for (const r of state.latest.routes) if (!seen.has(r.month)) seen.set(r.month, { id: r.month, label: r.label ?? r.month, kind: r.kind ?? "month" });
+  const list = [...seen.values()];
+  return [...list.filter(p => p.kind === "trip"), ...list.filter(p => p.kind !== "trip").sort((a, b) => a.id.localeCompare(b.id))];
+}
+const monthIds = () => periods().filter(p => p.kind !== "trip").map(p => p.id);
+function selectedRoutes(code) {
+  return state.latest.routes.filter(r => r.code === code &&
+    (state.month === "all" ? (r.kind ?? "month") !== "trip" : r.month === state.month));
+}
+function targetOf(code) {
+  const rs = selectedRoutes(code);
+  return rs.length ? rs[0].target_price : null;
+}
+const monthLabel = m => m.replace("-", " 年 ").replace(/ 0?(\d+)$/, " $1") + " 月";
 
-function render() { renderCards(); renderTabs(); renderChart(); renderOffers(); }
+function render() { renderTabs(); renderCards(); renderChart(); renderOffers(); }
 
 function renderCards() {
   $("cards").innerHTML = cities().map(c => {
-    const best = routesOf(c.code).flatMap(r => r.offers.map(o => ({ ...o, month: r.month })))
-      .sort((a, b) => a.price - b.price)[0];
-    const good = best && best.price <= c.target;
+    const best = selectedRoutes(c.code).flatMap(r => r.offers).sort((a, b) => a.price - b.price)[0];
+    const target = targetOf(c.code);
+    const good = best && target != null && best.price <= target;
     const badge = !best ? '<span class="badge warn">無資料</span>'
+      : target == null ? '<span class="badge warn">未設目標</span>'
       : good ? '<span class="badge good">低於目標</span>'
-      : `<span class="badge warn">差 ${fmt(best.price - c.target)}</span>`;
+      : `<span class="badge warn">差 ${fmt(best.price - target)}</span>`;
     return `<div class="card ${c.code === state.city ? "active" : ""}" data-code="${c.code}">
       <div class="city">${c.name} <span class="muted">${c.code}</span></div>
       <div class="price">${best ? fmt(best.price) : "—"}</div>
-      <div class="muted">目標 ${fmt(c.target)}${best ? " · " + best.departure_at.slice(5, 10) + " 出發" : ""}</div>
+      <div class="muted">目標 ${fmt(target)}${best ? " · " + best.departure_at.slice(5, 10) + " 出發" : ""}</div>
       <div style="margin-top:6px">${badge}</div></div>`;
   }).join("");
   document.querySelectorAll(".card").forEach(el => el.onclick = () => { state.city = el.dataset.code; render(); });
 }
 
 function renderTabs() {
-  const opts = [["all", "全部月份"], ...months().map(m => [m, m.replace("-", " 年 ") + " 月"])];
+  const opts = [...periods().filter(p => p.kind === "trip").map(p => [p.id, "📌 " + p.label]),
+    ["all", "未來 12 個月"], ...monthIds().map(m => [m, monthLabel(m)])];
   $("month-tabs").innerHTML = opts.map(([v, label]) =>
     `<button class="${v === state.month ? "active" : ""}" data-m="${v}">${label}</button>`).join("");
   document.querySelectorAll("#month-tabs button").forEach(b => b.onclick = () => { state.month = b.dataset.m; render(); });
@@ -125,28 +143,28 @@ function renderTabs() {
 function renderChart() {
   const city = cities().find(c => c.code === state.city);
   $("chart-title").textContent = `價格走勢：${city?.name ?? ""}`;
-  // 每次抓價的時間點，取所選月份中的最低價；「全部月份」則每個月份各一條線
-  const rows = state.history.filter(h => h.code === state.city);
-  const mList = state.month === "all" ? months() : [state.month];
-  const datasets = mList.map((m, i) => ({
-    label: m,
-    data: rows.filter(h => h.month === m).map(h => ({ x: h.t.slice(0, 16).replace("T", " "), y: h.price })),
-    borderColor: COLORS[i % COLORS.length], backgroundColor: COLORS[i % COLORS.length],
-    tension: .25, pointRadius: 2, borderWidth: 2,
-  }));
-  datasets.push({
-    label: "目標價", data: [...new Set(rows.map(h => h.t.slice(0, 16).replace("T", " ")))].map(x => ({ x, y: city?.target })),
-    borderColor: "#999", borderDash: [6, 4], pointRadius: 0, borderWidth: 1,
-  });
+  const ids = state.month === "all" ? monthIds() : [state.month];
+  const rows = state.history.filter(h => h.code === state.city && ids.includes(h.month));
+  // 每次抓價取所選期間的最低價
+  const byTime = new Map();
+  for (const h of rows) {
+    const x = h.t.slice(0, 16).replace("T", " ");
+    byTime.set(x, Math.min(byTime.get(x) ?? Infinity, h.price));
+  }
+  const labels = [...byTime.keys()].sort();
+  const target = targetOf(state.city);
+  const datasets = [{
+    label: "最低價", data: labels.map(x => byTime.get(x)),
+    borderColor: COLORS[0], backgroundColor: COLORS[0], tension: .25, pointRadius: 3, borderWidth: 2,
+  }];
+  if (target != null) datasets.push({ label: "目標價", data: labels.map(() => target), borderColor: "#999", borderDash: [6, 4], pointRadius: 0, borderWidth: 1 });
   state.chart?.destroy();
   state.chart = new Chart($("chart"), {
     type: "line",
-    data: { datasets },
+    data: { labels, datasets },
     options: {
-      maintainAspectRatio: false, parsing: { xAxisKey: "x", yAxisKey: "y" },
-      interaction: { mode: "index", intersect: false },
-      scales: { x: { type: "category", labels: [...new Set(rows.map(h => h.t.slice(0, 16).replace("T", " ")))], ticks: { maxTicksLimit: 8 } },
-                y: { ticks: { callback: v => fmt(v) } } },
+      maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+      scales: { x: { ticks: { maxTicksLimit: 8 } }, y: { ticks: { callback: v => fmt(v) } } },
       plugins: { tooltip: { callbacks: { label: c => `${c.dataset.label}：${fmt(c.parsed.y)}` } } },
     },
   });
@@ -160,15 +178,15 @@ function gflights(o) {
 function renderOffers() {
   const city = cities().find(c => c.code === state.city);
   $("table-title").textContent = `最便宜的航班：${city?.name ?? ""}`;
-  const offers = routesOf(state.city).filter(r => state.month === "all" || r.month === state.month)
-    .flatMap(r => r.offers).sort((a, b) => a.price - b.price).slice(0, 15);
+  const target = targetOf(state.city);
+  const offers = selectedRoutes(state.city).flatMap(r => r.offers).sort((a, b) => a.price - b.price).slice(0, 15);
   if (!offers.length) { $("offers").innerHTML = '<div class="empty">這段期間沒有價格資料</div>'; return; }
   const stops = n => n === 0 ? "直飛" : `轉 ${n} 次`;
   $("offers").innerHTML = `<table><thead><tr>
       <th>價格</th><th>去程</th><th>回程</th><th>天數</th><th>航空</th><th>機場</th><th>轉機</th><th>連結</th>
     </tr></thead><tbody>${offers.map(o => {
       const days = o.return_at ? Math.round((new Date(o.return_at.slice(0, 10)) - new Date(o.departure_at.slice(0, 10))) / 864e5) : "—";
-      return `<tr class="${o.price <= city.target ? "good" : ""}">
+      return `<tr class="${target != null && o.price <= target ? "good" : ""}">
         <td class="num">${fmt(o.price)}</td>
         <td>${o.departure_at.slice(0, 10)}</td><td>${o.return_at ? o.return_at.slice(0, 10) : "單程"}</td>
         <td>${days}</td><td>${o.airline ?? ""} ${o.flight_number ?? ""}</td><td>${o.destination_airport ?? ""}</td>
