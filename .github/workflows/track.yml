@@ -28,6 +28,7 @@ jobs:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
         run: python tracker.py
 
       - name: Commit data
