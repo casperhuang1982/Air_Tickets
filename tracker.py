@@ -5,6 +5,7 @@
   GMAIL_USER          寄件 Gmail 帳號（選填，沒設就不寄信）
   GMAIL_APP_PASSWORD  Gmail 應用程式密碼
   NOTIFY_TO           收件人，預設同 GMAIL_USER
+  SERPAPI_KEY         SerpApi key（選填，有設就用 Google Flights 即時價格查指定行程）
 """
 
 import json
@@ -23,8 +24,11 @@ DATA = ROOT / "data"
 HISTORY_FILE = DATA / "history.json"
 LATEST_FILE = DATA / "latest.json"
 NOTIFIED_FILE = DATA / "notified.json"
+SERP_STATE_FILE = DATA / "serpapi.json"
 
 API_URL = "https://api.travelpayouts.com/aviasales/v3/prices_for_dates"
+SERP_URL = "https://serpapi.com/search.json"
+SERP_MIN_INTERVAL = timedelta(hours=20)  # 免費額度有限，指定行程每天只查一次
 TW = timezone(timedelta(hours=8))
 HISTORY_MAX_DAYS = 365
 OFFERS_KEPT = 10
@@ -77,6 +81,63 @@ def fetch_offers(cfg, dest, departure_at, token, return_at=None):
     if not body.get("success"):
         raise RuntimeError(f"API 回傳失敗：{body}")
     return body.get("data", [])
+
+
+def fetch_serp_trip(cfg, dest, trip, key):
+    """用 SerpApi 查 Google Flights 指定日期的即時來回票價。"""
+    airports = {d["code"]: d.get("airports", d["code"]) for d in cfg["destinations"]}
+    params = {
+        "engine": "google_flights",
+        "departure_id": cfg.get("origin_airports", cfg["origin"]),
+        "arrival_id": airports[dest],
+        "outbound_date": trip["depart"],
+        "return_date": trip["return"],
+        "type": 1,
+        "currency": cfg.get("currency", "twd").upper(),
+        "hl": "zh-TW",
+        "gl": "tw",
+        "api_key": key,
+    }
+    url = f"{SERP_URL}?{urllib.parse.urlencode(params)}"
+    with urllib.request.urlopen(url, timeout=60) as resp:
+        body = json.loads(resp.read().decode("utf-8"))
+    if body.get("error"):
+        raise RuntimeError(body["error"])
+    gf_url = body.get("search_metadata", {}).get("google_flights_url")
+    offers = []
+    for f in body.get("best_flights", []) + body.get("other_flights", []):
+        if not f.get("price"):
+            continue
+        segs = f["flights"]
+        offers.append({
+            "price": f["price"],
+            "airline": " / ".join(dict.fromkeys(s["airline"] for s in segs)),
+            "flight_number": ", ".join(s["flight_number"] for s in segs),
+            "destination_airport": segs[-1]["arrival_airport"]["id"],
+            "departure_at": segs[0]["departure_airport"]["time"].replace(" ", "T"),
+            "return_at": trip["return"],
+            "transfers": len(f.get("layovers", [])),
+            "return_transfers": None,
+            "duration_min": f.get("total_duration"),
+            "link": gf_url,
+            "source": "google",
+        })
+    pi = body.get("price_insights") or {}
+    insights = {
+        "lowest": pi.get("lowest_price"),
+        "level": pi.get("price_level"),
+        "typical_range": pi.get("typical_price_range"),
+    } if pi else None
+    return sorted(offers, key=lambda o: o["price"]), insights
+
+
+def serp_account(key):
+    try:
+        with urllib.request.urlopen(f"https://serpapi.com/account.json?api_key={key}", timeout=30) as resp:
+            a = json.loads(resp.read().decode("utf-8"))
+        print(f"SerpApi 方案：{a.get('plan_name')}，本月剩餘 {a.get('plan_searches_left')} / {a.get('searches_per_month')} 次")
+    except Exception as e:
+        print(f"SerpApi 帳號查詢失敗：{type(e).__name__}")
 
 
 def trip_days(offer):
@@ -161,10 +222,21 @@ def main():
     now = datetime.now(TW).isoformat(timespec="minutes")
 
     history = load_json(HISTORY_FILE, [])
+    prev_routes = {r["key"]: r for r in load_json(LATEST_FILE, {}).get("routes", [])}
+    serp_key = os.environ.get("SERPAPI_KEY")
+    last_serp = load_json(SERP_STATE_FILE, {}).get("last_run")
+    serp_due = bool(serp_key) and (
+        not last_serp or datetime.now(TW) - datetime.fromisoformat(last_serp) >= SERP_MIN_INTERVAL
+    )
+    if serp_key:
+        serp_account(serp_key)
+        if not serp_due:
+            print(f"SerpApi 上次查詢 {last_serp}，未滿 20 小時，沿用上次結果")
     notified = load_json(NOTIFIED_FILE, {})
     latest = {"updated_at": now, "currency": cfg.get("currency", "twd"), "routes": []}
     alerts = []
     errors = 0
+    serp_ok = False
 
     # 要查的期間：指定行程（固定去回日期）＋ 未來每個月份
     periods = [
@@ -177,24 +249,43 @@ def main():
         for p in periods:
             key = f"{cfg['origin']}-{d['code']}-{p['id']}"
             target = p["target"] if p["kind"] == "trip" else d["target_price"]
+            route = {
+                "key": key, "code": d["code"], "name": d["name"], "month": p["id"],
+                "label": p["label"], "kind": p["kind"], "target_price": target,
+            }
+            fresh = True
             try:
-                raw = fetch_offers(cfg, d["code"], p["depart"], token, p["return"])
+                if p["kind"] == "trip" and serp_key:
+                    if serp_due:
+                        offers, route["insights"] = fetch_serp_trip(cfg, d["code"], p, serp_key)
+                        offers = offers[:OFFERS_KEPT]
+                        route["checked_at"] = now
+                        serp_ok = True
+                    else:  # 沿用上次 SerpApi 結果，不寫入歷史
+                        prev = prev_routes.get(key, {})
+                        offers = prev.get("offers", [])
+                        route["insights"] = prev.get("insights")
+                        route["checked_at"] = prev.get("checked_at")
+                        fresh = False
+                    route["source"] = "google"
+                    print(f"[{key}] Google Flights {len(offers)} 筆，最低 {offers[0]['price'] if offers else '-'}")
+                else:
+                    raw = fetch_offers(cfg, d["code"], p["depart"], token, p["return"])
+                    time.sleep(0.2)
+                    # 指定行程已固定日期，不再套用天數篩選
+                    kept = raw if p["kind"] == "trip" else [o for o in raw if keep_offer(cfg, o)]
+                    offers = sorted((simplify(o) for o in kept), key=lambda o: o["price"])[:OFFERS_KEPT]
+                    print(f"[{key}] {len(raw)} 筆，符合條件 {len(offers)} 筆，最低 {offers[0]['price'] if offers else '-'}")
             except Exception as e:  # 單一航線失敗不影響其他航線
                 print(f"[{key}] 抓取失敗：{e}")
                 errors += 1
                 continue
-            time.sleep(0.2)
 
-            # 指定行程已固定日期，不再套用天數篩選
-            kept = raw if p["kind"] == "trip" else [o for o in raw if keep_offer(cfg, o)]
-            offers = sorted((simplify(o) for o in kept), key=lambda o: o["price"])[:OFFERS_KEPT]
+            route["offers"] = offers
+            latest["routes"].append(route)
             best = offers[0] if offers else None
-            print(f"[{key}] {len(raw)} 筆，符合條件 {len(offers)} 筆，最低 {best['price'] if best else '-'}")
-
-            latest["routes"].append({
-                "key": key, "code": d["code"], "name": d["name"], "month": p["id"],
-                "label": p["label"], "kind": p["kind"], "target_price": target, "offers": offers,
-            })
+            if not fresh:
+                continue
             if best:
                 history.append({"t": now, "key": key, "code": d["code"], "month": p["id"], "price": best["price"]})
 
@@ -221,6 +312,8 @@ def main():
     save_json(LATEST_FILE, latest)
     save_json(HISTORY_FILE, history)
     save_json(NOTIFIED_FILE, notified)
+    if serp_ok:  # 有查成功才計時，失敗的話下次排程會重試
+        save_json(SERP_STATE_FILE, {"last_run": now})
 
     if errors and not latest["routes"]:
         sys.exit("所有航線都抓取失敗")

@@ -1,5 +1,6 @@
 {
   "origin": "TPE",
+  "origin_airports": "TPE,TSA",
   "currency": "twd",
   "months_ahead": 12,
   "months": [],
@@ -20,27 +21,32 @@
     {
       "code": "TYO",
       "name": "東京",
-      "target_price": 6000
+      "target_price": 6000,
+      "airports": "NRT,HND"
     },
     {
       "code": "OSA",
       "name": "大阪",
-      "target_price": 6000
+      "target_price": 6000,
+      "airports": "KIX,ITM"
     },
     {
       "code": "FUK",
       "name": "福岡",
-      "target_price": 6500
+      "target_price": 6500,
+      "airports": "FUK"
     },
     {
       "code": "SPK",
       "name": "札幌",
-      "target_price": 7000
+      "target_price": 7000,
+      "airports": "CTS"
     },
     {
       "code": "OKA",
       "name": "沖繩",
-      "target_price": 4500
+      "target_price": 4500,
+      "airports": "OKA"
     }
   ]
 }

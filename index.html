@@ -180,9 +180,16 @@ function renderOffers() {
   $("table-title").textContent = `最便宜的航班：${city?.name ?? ""}`;
   const target = targetOf(state.city);
   const offers = selectedRoutes(state.city).flatMap(r => r.offers).sort((a, b) => a.price - b.price).slice(0, 15);
-  if (!offers.length) { $("offers").innerHTML = '<div class="empty">這段期間沒有價格資料</div>'; return; }
-  const stops = n => n === 0 ? "直飛" : `轉 ${n} 次`;
-  $("offers").innerHTML = `<table><thead><tr>
+  // 指定行程若來自 Google Flights，顯示查詢時間與 Google 的價格判斷
+  const r0 = selectedRoutes(state.city)[0];
+  const LEVEL = { low: "偏低 👍", typical: "一般", high: "偏高" };
+  const ins = r0?.insights;
+  const info = r0?.source === "google" ? `<p class="muted">Google Flights 即時價格（查詢時間 ${(r0.checked_at ?? "—").replace("T", " ")}）` +
+    (ins ? `　價格判斷：<b>${LEVEL[ins.level] ?? ins.level ?? "—"}</b>` +
+      (ins.typical_range ? `　常見價格範圍 ${fmt(ins.typical_range[0])}–${fmt(ins.typical_range[1])}` : "") : "") + "</p>" : "";
+  if (!offers.length) { $("offers").innerHTML = info + '<div class="empty">這段期間沒有價格資料</div>'; return; }
+  const stops = n => n == null ? "" : n === 0 ? "直飛" : `轉 ${n} 次`;
+  $("offers").innerHTML = info + `<table><thead><tr>
       <th>價格</th><th>去程</th><th>回程</th><th>天數</th><th>航空</th><th>機場</th><th>轉機</th><th>連結</th>
     </tr></thead><tbody>${offers.map(o => {
       const days = o.return_at ? Math.round((new Date(o.return_at.slice(0, 10)) - new Date(o.departure_at.slice(0, 10))) / 864e5) : "—";
@@ -190,8 +197,9 @@ function renderOffers() {
         <td class="num">${fmt(o.price)}</td>
         <td>${o.departure_at.slice(0, 10)}</td><td>${o.return_at ? o.return_at.slice(0, 10) : "單程"}</td>
         <td>${days}</td><td>${o.airline ?? ""} ${o.flight_number ?? ""}</td><td>${o.destination_airport ?? ""}</td>
-        <td>${stops(o.transfers)}${o.return_at ? " / " + stops(o.return_transfers) : ""}</td>
-        <td>${o.link ? `<a href="${o.link}" target="_blank" rel="noopener">Aviasales</a> · ` : ""}<a href="${gflights(o)}" target="_blank" rel="noopener">Google</a></td>
+        <td>${stops(o.transfers)}${o.return_at && o.return_transfers != null ? " / " + stops(o.return_transfers) : ""}</td>
+        <td>${o.source === "google" ? `<a href="${o.link ?? gflights(o)}" target="_blank" rel="noopener">Google Flights</a>`
+          : (o.link ? `<a href="${o.link}" target="_blank" rel="noopener">Aviasales</a> · ` : "") + `<a href="${gflights(o)}" target="_blank" rel="noopener">Google</a>`}</td>
       </tr>`;
     }).join("")}</tbody></table>`;
 }
