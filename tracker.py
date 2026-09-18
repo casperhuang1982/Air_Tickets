@@ -140,12 +140,13 @@ def serp_account(key):
         print(f"SerpApi 帳號查詢失敗：{type(e).__name__}")
 
 
-def is_preferred(cfg, offer):
-    """是否為偏好航空（例如長榮 BR）；同時比對航空代碼、航班號前綴與中文名稱。"""
+def matches_airline(offer, airlines):
+    """航班是否屬於清單中任一家航空；轉機行程只要有一段符合就算。
+    同時比對航空代碼、航班號前綴與中文名稱。"""
     airline = offer.get("airline") or ""
     flights = [f.strip() for f in (offer.get("flight_number") or "").split(",")]
-    for a in cfg.get("preferred_airlines", []):
-        if airline == a["code"] or a["name"] in airline:
+    for a in airlines:
+        if airline == a["code"] or (a.get("name") and a["name"] in airline):
             return True
         # Google 航班號為「BR 186」；Travelpayouts 的 flight_number 只有數字，由 airline 判斷
         if any(f.startswith(a["code"] + " ") for f in flights):
@@ -153,8 +154,13 @@ def is_preferred(cfg, offer):
     return False
 
 
+def is_preferred(cfg, offer):
+    return matches_airline(offer, cfg.get("preferred_airlines", []))
+
+
 def pick_offers(cfg, offers):
-    """保留最便宜的 N 班，另外把偏好航空的航班也留下，避免因為較貴而被刷掉。"""
+    """排除不要的航空，保留最便宜的 N 班，另外把偏好航空的航班也留下，避免因為較貴而被刷掉。"""
+    offers = [o for o in offers if not matches_airline(o, cfg.get("excluded_airlines", []))]
     for o in offers:
         o["preferred"] = is_preferred(cfg, o)
     top = offers[:OFFERS_KEPT]

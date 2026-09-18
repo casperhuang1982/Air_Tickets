@@ -27,6 +27,8 @@ GitHub Actions 每 6 小時抓一次 Travelpayouts 價格，存進 `data/`，低
 - `trip_days_min` / `trip_days_max`：來回行程天數範圍
 - `one_way`：`true` 改追單程
 - `direct_only`：`true` 只看直飛
+- `preferred_airlines`：偏好航空（網頁會特別標註，也一定會保留），如 `{"code": "BR", "name": "長榮"}`
+- `excluded_airlines`：不要的航空，抓價時直接排除（轉機行程只要有一段是它就排除）。`code` 為兩碼航空代碼、`name` 為 Google 顯示的中文名稱片段，兩者都填比對最完整
 
 ## 本機預覽
 

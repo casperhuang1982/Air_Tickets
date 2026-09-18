@@ -14,6 +14,7 @@
       "name": "長榮"
     }
   ],
+  "excluded_airlines": [],
   "trips": [
     {
       "id": "2027-summer",
