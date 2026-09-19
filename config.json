@@ -24,6 +24,28 @@
       "target_price": null
     }
   ],
+  "flex_trips": [
+    {
+      "id": "ngo-2026-11",
+      "name": "名古屋 11 月（週六出發 5天4夜）",
+      "dest": "NGO",
+      "month": "2026-11",
+      "weekday": "sat",
+      "nights": 4,
+      "refresh_days": 4,
+      "target_price": null
+    },
+    {
+      "id": "ngo-2026-12",
+      "name": "名古屋 12 月（週六出發 5天4夜）",
+      "dest": "NGO",
+      "month": "2026-12",
+      "weekday": "sat",
+      "nights": 4,
+      "refresh_days": 4,
+      "target_price": null
+    }
+  ],
   "destinations": [
     {
       "code": "TYO",

@@ -132,12 +132,32 @@ def fetch_serp_trip(cfg, dest, trip, key):
 
 
 def serp_account(key):
+    """查詢 SerpApi 帳號額度（此查詢本身不計入額度）。"""
     try:
         with urllib.request.urlopen(f"https://serpapi.com/account.json?api_key={key}", timeout=30) as resp:
             a = json.loads(resp.read().decode("utf-8"))
         print(f"SerpApi 方案：{a.get('plan_name')}，本月剩餘 {a.get('plan_searches_left')} / {a.get('searches_per_month')} 次")
+        return {k: a.get(k) for k in ("plan_name", "searches_per_month", "plan_searches_left",
+                                      "this_month_usage", "extra_credits", "account_rate_limit_per_hour")}
     except Exception as e:
         print(f"SerpApi 帳號查詢失敗：{type(e).__name__}")
+        return None
+
+
+WEEKDAYS = {"mon": 0, "tue": 1, "wed": 2, "thu": 3, "fri": 4, "sat": 5, "sun": 6}
+
+
+def flex_dates(ft):
+    """彈性行程：列出指定月份中每個指定星期幾出發的去回日期（只取未來日期）。"""
+    y, m = map(int, ft["month"].split("-"))
+    wd = WEEKDAYS[ft.get("weekday", "sat")]
+    d = date(y, m, 1)
+    out = []
+    while d.month == m:
+        if d.weekday() == wd and d > date.today():
+            out.append((d.isoformat(), (d + timedelta(days=ft["nights"])).isoformat()))
+        d += timedelta(days=1)
+    return out
 
 
 def matches_airline(offer, airlines):
@@ -254,13 +274,12 @@ def main():
     history = load_json(HISTORY_FILE, [])
     prev_routes = {r["key"]: r for r in load_json(LATEST_FILE, {}).get("routes", [])}
     serp_key = os.environ.get("SERPAPI_KEY")
-    if serp_key:
-        serp_account(serp_key)
+    calls = {"serpapi": 0, "travelpayouts": 0}
 
-    def serp_due(key):
-        """每條航線各自計時：從沒查過、或距上次查詢已滿 20 小時才查。"""
+    def serp_due(key, interval=SERP_MIN_INTERVAL):
+        """每條航線各自計時：從沒查過、或距上次查詢已滿間隔才查。"""
         last = prev_routes.get(key, {}).get("checked_at")
-        return not last or datetime.now(TW) - datetime.fromisoformat(last) >= SERP_MIN_INTERVAL
+        return not last or datetime.now(TW) - datetime.fromisoformat(last) >= interval
     notified = load_json(NOTIFIED_FILE, {})
     latest = {"updated_at": now, "currency": cfg.get("currency", "twd"), "routes": []}
     alerts = []
@@ -271,12 +290,18 @@ def main():
         {"id": t["id"], "label": t["name"], "kind": "trip", "depart": t["depart"],
          "return": t.get("return"), "target": t.get("target_price")}
         for t in cfg.get("trips", []) if t["depart"] >= date.today().isoformat()
+    ] + [
+        {"id": ft["id"], "label": ft["name"], "kind": "flex", "dest": ft["dest"], "flex": ft,
+         "target": ft.get("target_price")}
+        for ft in cfg.get("flex_trips", []) if serp_key and flex_dates(ft)
     ] + [{"id": m, "label": m, "kind": "month", "depart": m, "return": None} for m in months]
 
     for d in cfg["destinations"]:
         for p in periods:
+            if p.get("dest") and p["dest"] != d["code"]:
+                continue  # 彈性行程只查指定的城市
             key = f"{cfg['origin']}-{d['code']}-{p['id']}"
-            target = p["target"] if p["kind"] == "trip" else d["target_price"]
+            target = d["target_price"] if p["kind"] == "month" else p["target"]
             route = {
                 "key": key, "code": d["code"], "name": d["name"], "month": p["id"],
                 "label": p["label"], "kind": p["kind"], "target_price": target,
@@ -285,9 +310,37 @@ def main():
                 route.update(depart=p["depart"], **{"return": p["return"]})
             fresh = True
             try:
-                if p["kind"] == "trip" and serp_key:
+                if p["kind"] == "flex":
+                    ft = p["flex"]
+                    interval = timedelta(days=ft.get("refresh_days", 4)) - timedelta(hours=2)
+                    if serp_due(key, interval):
+                        # 每組日期各查一次，每天保留前幾名與偏好航空，再合併
+                        offers, dates = [], []
+                        for dep, ret in flex_dates(ft):
+                            got, ins = fetch_serp_trip(cfg, d["code"], {"depart": dep, "return": ret}, serp_key)
+                            calls["serpapi"] += 1
+                            got = pick_offers(cfg, got)
+                            pref = next((o for o in got if o["preferred"]), None)
+                            dates.append({"depart": dep, "return": ret, "best": got[0]["price"] if got else None,
+                                          "pref": pref["price"] if pref else None, "level": (ins or {}).get("level")})
+                            offers += got[:3] + [o for o in got[3:] if o["preferred"]][:2]
+                        offers.sort(key=lambda o: o["price"])
+                        route["dates"] = dates
+                        route["checked_at"] = now
+                    else:
+                        prev = prev_routes.get(key, {})
+                        offers = prev.get("offers", [])
+                        route["dates"] = prev.get("dates", [])
+                        route["checked_at"] = prev.get("checked_at")
+                        fresh = False
+                    route["source"] = "google"
+                    route["refresh_days"] = ft.get("refresh_days", 4)
+                    print(f"[{key}] Google Flights {len(route['dates'])} 組日期，最低 {offers[0]['price'] if offers else '-'}"
+                          + ("" if fresh else "（沿用上次結果）"))
+                elif p["kind"] == "trip" and serp_key:
                     if serp_due(key):
                         offers, route["insights"] = fetch_serp_trip(cfg, d["code"], p, serp_key)
+                        calls["serpapi"] += 1
                         offers = pick_offers(cfg, offers)
                         route["checked_at"] = now
                     else:  # 沿用上次 SerpApi 結果，不寫入歷史
@@ -300,6 +353,7 @@ def main():
                     print(f"[{key}] Google Flights {len(offers)} 筆，最低 {offers[0]['price'] if offers else '-'}")
                 else:
                     raw = fetch_offers(cfg, d["code"], p["depart"], token, p["return"])
+                    calls["travelpayouts"] += 1
                     time.sleep(0.2)
                     # 指定行程已固定日期，不再套用天數篩選
                     kept = raw if p["kind"] == "trip" else [o for o in raw if keep_offer(cfg, o)]
@@ -341,6 +395,18 @@ def main():
         if send_email(f"✈️ 機票降價：{names}", build_email(alerts, latest["currency"])):
             for a in alerts:
                 notified[a["key"]] = a["offer"]["price"]
+
+    # API 額度：放在最後查，數字才包含本次用量
+    today = date.today().isoformat()
+    planned = sum(30 for t in cfg.get("trips", []) if t["depart"] >= today) * len(cfg["destinations"])
+    planned += sum(len(flex_dates(ft)) * 30 / ft.get("refresh_days", 4) for ft in cfg.get("flex_trips", []))
+    latest["api_usage"] = {
+        "checked_at": now,
+        "serpapi": serp_account(serp_key) if serp_key else None,
+        "serpapi_calls_this_run": calls["serpapi"],
+        "serpapi_planned_per_month": round(planned),
+        "travelpayouts_calls_this_run": calls["travelpayouts"],
+    }
 
     save_json(LATEST_FILE, latest)
     save_json(HISTORY_FILE, history)
