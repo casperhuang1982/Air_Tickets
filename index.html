@@ -372,7 +372,7 @@ function renderUsage() {
     const planned = u.serpapi_planned_per_month;
     const level = pct >= 90 ? "high" : pct >= 70 ? "mid" : "";
     html += `<div class="usage">
-      <div class="usage-head"><b>SerpApi（Google Flights）</b><span>${esc(sp.plan_name ?? "")}・每月重置</span></div>
+      <div class="usage-head"><b>SerpApi（Google Flights）</b><span>${esc(sp.plan_name ?? "")}・${sp.plan_renewal_date ? `${md(sp.plan_renewal_date)} 重置` : "每月重置"}</span></div>
       <div class="bar ${level}"><span style="width:${pct}%"></span></div>
       <div class="usage-nums"><span>本月已用 <b>${fmt(used)}</b> / ${fmt(total)} 次</span><span>剩餘 <b>${fmt(left)}</b> 次</span></div>
       ${planned != null ? `<div class="usage-note ${planned > total ? "over" : ""}">依目前設定，預估每月用量約 ${fmt(planned)} 次${planned > total ? "，⚠️ 會超過免費額度" : ""}</div>` : ""}

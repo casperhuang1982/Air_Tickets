@@ -137,7 +137,7 @@ def serp_account(key):
         with urllib.request.urlopen(f"https://serpapi.com/account.json?api_key={key}", timeout=30) as resp:
             a = json.loads(resp.read().decode("utf-8"))
         print(f"SerpApi 方案：{a.get('plan_name')}，本月剩餘 {a.get('plan_searches_left')} / {a.get('searches_per_month')} 次")
-        return {k: a.get(k) for k in ("plan_name", "searches_per_month", "plan_searches_left",
+        return {k: a.get(k) for k in ("plan_name", "plan_renewal_date", "searches_per_month", "plan_searches_left",
                                       "this_month_usage", "extra_credits", "account_rate_limit_per_hour")}
     except Exception as e:
         print(f"SerpApi 帳號查詢失敗：{type(e).__name__}")
