@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-19T14:07+08:00",
+ "updated_at": "2026-09-19T14:11+08:00",
  "currency": "twd",
  "routes": [
   {
@@ -3732,16 +3732,17 @@
   }
  ],
  "api_usage": {
-  "checked_at": "2026-09-19T14:07+08:00",
+  "checked_at": "2026-09-19T14:11+08:00",
   "serpapi": {
    "plan_name": "Free Plan",
+   "plan_renewal_date": "2026-10-18",
    "searches_per_month": 250,
    "plan_searches_left": 230,
    "this_month_usage": 20,
    "extra_credits": 0,
    "account_rate_limit_per_hour": 250
   },
-  "serpapi_calls_this_run": 8,
+  "serpapi_calls_this_run": 0,
   "serpapi_planned_per_month": 240,
   "travelpayouts_calls_this_run": 72
  }
