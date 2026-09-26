@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-27T00:20+08:00",
+ "updated_at": "2026-09-27T05:07+08:00",
  "currency": "twd",
  "routes": [
   {
@@ -357,6 +357,18 @@
      "transfers": 0,
      "return_transfers": 0,
      "link": "https://www.aviasales.com/search/TPE1011TYO15111?t=MM17943306001794345900000195TPENRT17947215001794732900000250HNDTPE_6e6e6dba7d8285dab465e012662505be_21238&search_date=22092026&expected_price_uuid=01a0c826-adb8-8040-a26b-67f2ac6cfe15&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=Ylb_LlOHuJmMi4QiNdX1bg&expected_price_source=share&expected_price_currency=twd&expected_price=8056",
+     "preferred": false
+    },
+    {
+     "price": 8345,
+     "airline": "MM",
+     "flight_number": "860",
+     "destination_airport": "HND",
+     "departure_at": "2026-11-04T20:55:00+08:00",
+     "return_at": "2026-11-08T08:30:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE0411TYO08111?t=GK17938257001793839800000175TPEHND17941266001794138600000260NRTTPE_251a0dd1020115f83900cdfc27307b4f_22194&search_date=26092026&expected_price_uuid=01a0df0d-972a-8030-ed8d-3c2a521aaed5&static_fare_key=TY%7CP1_JW%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=UTrW0iRPGt0A8EysN41B8Q&expected_price_source=share&expected_price_currency=twd&expected_price=8345",
      "preferred": false
     },
     {
@@ -3202,7 +3214,7 @@
   }
  ],
  "api_usage": {
-  "checked_at": "2026-09-27T00:20+08:00",
+  "checked_at": "2026-09-27T05:07+08:00",
   "serpapi": {
    "plan_name": "Free Plan",
    "plan_renewal_date": "2026-10-18",
