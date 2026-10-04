@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-04T13:48+08:00",
+ "updated_at": "2026-10-04T20:18+08:00",
  "currency": "twd",
  "routes": [
   {
@@ -329,6 +329,18 @@
      "preferred": false
     },
     {
+     "price": 9006,
+     "airline": "SL",
+     "flight_number": "394",
+     "destination_airport": "NRT",
+     "departure_at": "2026-11-12T12:10:00+08:00",
+     "return_at": "2026-11-19T19:45:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1211TYO19111?t=TR17944854001794500700000195TPENRT17951175001795128900000250NRTTPE_297ebf46765a63b1dc64c739582d4264_23669&search_date=04102026&expected_price_uuid=01a105b1-7166-8030-ac27-a3cdd6563684&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=Jrr7Sbr1G4bDl1ZClRxRDA&expected_price_source=share&expected_price_currency=twd&expected_price=9006",
+     "preferred": false
+    },
+    {
      "price": 9101,
      "airline": "TR",
      "flight_number": "866",
@@ -350,18 +362,6 @@
      "transfers": 0,
      "return_transfers": 0,
      "link": "https://www.aviasales.com/search/TPE2411TYO27111?t=GK17955537001795567800000175TPEHND17958183001795829400000245NRTTPE_16f2030b3e3fc41fe98a9d9eea818589_23982&search_date=01102026&expected_price_uuid=01a0f598-e166-8040-21df-96aaedc5008c&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=x-Owi3RRdRTEJzzVijUMNg&expected_price_source=share&expected_price_currency=twd&expected_price=9177",
-     "preferred": false
-    },
-    {
-     "price": 9511,
-     "airline": "MM",
-     "flight_number": "860",
-     "destination_airport": "HND",
-     "departure_at": "2026-11-11T20:55:00+08:00",
-     "return_at": "2026-11-14T22:25:00+09:00",
-     "transfers": 0,
-     "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE1111TYO14111?t=GK17944305001794444600000175TPEHND17946951001794706200000245NRTTPE_cc7de60928020a524324b50b6f267f86_25284&search_date=28092026&expected_price_uuid=01a0e8ac-ef2a-8030-62ee-72c6ea2c7786&static_fare_key=TY%7CP1_JW%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=x-Owi3RRdRTEJzzVijUMNg&expected_price_source=share&expected_price_currency=twd&expected_price=9511",
      "preferred": false
     }
    ]
@@ -385,18 +385,6 @@
      "transfers": 0,
      "return_transfers": 0,
      "link": "https://www.aviasales.com/search/TPE0612TYO13121?t=GK17965242001796538900000185TPENRT17971506001797162600000260NRTTPE_6b0e0bdbec58b4e9222af2241e681b6e_20034&search_date=28092026&expected_price_uuid=01a0e836-86cd-8030-a1af-2b46a1c10a19&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=V4l0XM1XOMd-wnS9m0dg6g&expected_price_source=share&expected_price_currency=twd&expected_price=7534",
-     "preferred": false
-    },
-    {
-     "price": 8050,
-     "airline": "MM",
-     "flight_number": "860",
-     "destination_airport": "HND",
-     "departure_at": "2026-12-05T20:55:00+08:00",
-     "return_at": "2026-12-13T05:45:00+09:00",
-     "transfers": 0,
-     "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE0512TYO13121?t=MM17965041001796518200000175TPEHND17971407001797152100000250HNDTPE_36dbbda2ce24bfea01d640232fe9b641_21156&search_date=03102026&expected_price_uuid=01a0ffed-1f4f-8030-e912-d9a5f6d4620d&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=JGO-ubiWFGJOYkg185f9tQ&expected_price_source=share&expected_price_currency=twd&expected_price=8050",
      "preferred": false
     },
     {
@@ -436,6 +424,18 @@
      "preferred": false
     },
     {
+     "price": 8829,
+     "airline": "MM",
+     "flight_number": "860",
+     "destination_airport": "HND",
+     "departure_at": "2026-12-05T20:55:00+08:00",
+     "return_at": "2026-12-13T08:30:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE0512TYO13121?t=GK17965041001796518200000175TPEHND17971506001797162600000260NRTTPE_7bf1e2dd460306eb6149faabb8072978_23204&search_date=04102026&expected_price_uuid=01a10590-7557-8030-ee06-801b1b4d0dac&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=A2GQFEmLWY46-Uq1g8pFoQ&expected_price_source=share&expected_price_currency=twd&expected_price=8829",
+     "preferred": false
+    },
+    {
      "price": 8991,
      "airline": "MM",
      "flight_number": "628",
@@ -445,18 +445,6 @@
      "transfers": 0,
      "return_transfers": 0,
      "link": "https://www.aviasales.com/search/TPE2012TYO23121?t=MM17977869001797802200000195TPENRT17980047001798016100000250HNDTPE_ccec939df3e61e28872ec3fb1fcb37b8_23630&search_date=04102026&expected_price_uuid=01a10477-2fa0-8030-2866-475f625c0b50&static_fare_key=TY%7CP1_JW%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=lCWP1Bih3MPNnERmcUZOWQ&expected_price_source=share&expected_price_currency=twd&expected_price=8991",
-     "preferred": false
-    },
-    {
-     "price": 13322,
-     "airline": "MM",
-     "flight_number": "628",
-     "destination_airport": "NRT",
-     "departure_at": "2026-12-22T17:10:00+08:00",
-     "return_at": "2026-12-27T22:25:00+09:00",
-     "transfers": 0,
-     "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE2212TYO27121?t=GK17979594001797974700000195TPENRT17984103001798421400000245NRTTPE_577887fa300edd2287a64c52814a773a_35426&search_date=27092026&expected_price_uuid=01a0e24b-1f4a-8030-6e45-023c8bc330db&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=v5KFkvDGohDCFfS-nKPz2g&expected_price_source=share&expected_price_currency=twd&expected_price=13322",
      "preferred": false
     }
    ]
@@ -471,7 +459,7 @@
    "target_price": 6000,
    "offers": [
     {
-     "price": 9771,
+     "price": 9770,
      "airline": "MM",
      "flight_number": "926",
      "destination_airport": "NRT",
@@ -479,7 +467,7 @@
      "return_at": "2027-01-17T08:30:00+09:00",
      "transfers": 1,
      "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE1301TYO17011?t=GK17998536001799879100000365TPEOKANRT18001746001800186600000260NRTTPE_f8ffaa0a94fd35ee05e86c0dc19d2c1c_25679&search_date=03102026&expected_price_uuid=01a10059-f785-8030-e80d-34a609fa2b8c&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=ruRfe0Uynyg6hjydMrlSOA&expected_price_source=share&expected_price_currency=twd&expected_price=9771",
+     "link": "https://www.aviasales.com/search/TPE1301TYO17011?t=GK17998536001799879100000365TPEOKANRT18001746001800186600000260NRTTPE_f8ffaa0a94fd35ee05e86c0dc19d2c1c_25678&search_date=04102026&expected_price_uuid=01a10580-9578-8030-62ae-77eb99ed38cf&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=ruRfe0Uynyg6hjydMrlSOA&expected_price_source=share&expected_price_currency=twd&expected_price=9770",
      "preferred": false
     },
     {
@@ -624,6 +612,18 @@
    "kind": "month",
    "target_price": 6000,
    "offers": [
+    {
+     "price": 8497,
+     "airline": "GK",
+     "flight_number": "016",
+     "destination_airport": "NRT",
+     "departure_at": "2027-03-01T16:45:00+08:00",
+     "return_at": "2027-03-05T05:00:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE0103TYO05031?t=IT18039195001803934500000190TPENRT18042228001804233300000235HNDTPE_b9087fae25825f304bc5ad438e1bd752_22244&search_date=04102026&expected_price_uuid=01a10674-e20c-8030-eb51-a8b4a23ffe34&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=_uIQ04ahmFBEGRsyR7VAig&expected_price_source=share&expected_price_currency=twd&expected_price=8497",
+     "preferred": false
+    },
     {
      "price": 9028,
      "airline": "MM",
@@ -1015,7 +1015,7 @@
    "target_price": 6000,
    "offers": [
     {
-     "price": 9790,
+     "price": 9420,
      "airline": "AK",
      "flight_number": "176",
      "destination_airport": "KIX",
@@ -1023,7 +1023,7 @@
      "return_at": "2027-01-30T07:15:00+09:00",
      "transfers": 0,
      "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE2501OSA30011?t=MM18008916001800905400000170TPEKIX18012933001801302300000210KIXTPE_84e887300d6d00176fc7a6b4f40218cf_25522&search_date=30092026&expected_price_uuid=01a0f31d-e87a-8030-658e-7eea0415bcbd&static_fare_key=TY%7CP1_JW%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=oNw9Y6ahgE1OYfUZIk0U8Q&expected_price_source=share&expected_price_currency=twd&expected_price=9790",
+     "link": "https://www.aviasales.com/search/TPE2501OSA30011?t=MM18008916001800905400000170TPEKIX18012933001801302300000210KIXTPE_84e887300d6d00176fc7a6b4f40218cf_24660&search_date=04102026&expected_price_uuid=01a1067f-6e97-8030-efc7-bdbdf2c1af4a&static_fare_key=TY%7CP1_JW%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=oNw9Y6ahgE1OYfUZIk0U8Q&expected_price_source=share&expected_price_currency=twd&expected_price=9420",
      "preferred": false
     },
     {
@@ -3087,17 +3087,17 @@
   }
  ],
  "api_usage": {
-  "checked_at": "2026-10-04T13:48+08:00",
+  "checked_at": "2026-10-04T20:18+08:00",
   "serpapi": {
    "plan_name": "Free Plan",
    "plan_renewal_date": "2026-10-18",
    "searches_per_month": 250,
-   "plan_searches_left": 117,
-   "this_month_usage": 133,
+   "plan_searches_left": 116,
+   "this_month_usage": 134,
    "extra_credits": 0,
    "account_rate_limit_per_hour": 250
   },
-  "serpapi_calls_this_run": 6,
+  "serpapi_calls_this_run": 0,
   "serpapi_planned_per_month": 240,
   "travelpayouts_calls_this_run": 72
  }
