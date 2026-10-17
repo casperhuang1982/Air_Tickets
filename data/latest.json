@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-17T23:30+08:00",
+ "updated_at": "2026-10-18T04:33+08:00",
  "currency": "twd",
  "routes": [
   {
@@ -468,18 +468,6 @@
      "transfers": 1,
      "return_transfers": 0,
      "link": "https://www.aviasales.com/search/TPE2301TYO28011?t=MM18007389001800837900001590TPEHKGHND18011151001801126500000250HNDTPE_d0148afaf048853f89e2db9387031816_31776&search_date=17102026&expected_price_uuid=01a14975-f1e3-8040-aa5d-e0ac72d31cf8&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=Qfam7XsN98vT5fIgyav7fQ&expected_price_source=share&expected_price_currency=twd&expected_price=12480",
-     "preferred": false
-    },
-    {
-     "price": 12554,
-     "airline": "JX",
-     "flight_number": "233",
-     "destination_airport": "NRT",
-     "departure_at": "2027-01-02T08:50:00+08:00",
-     "return_at": "2027-01-10T22:05:00+09:00",
-     "transfers": 1,
-     "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE0201TYO10011?t=MM17988798001798985400001700TPEHKGNRT17996187001799630700000260NRTTPE_bdaf1b9ffef01608c21628d4780076ea_33450&search_date=10102026&expected_price_uuid=01a126b9-5ec4-8031-637d-3a272f1ab53d&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=7yVOi9tyJXu1dvFrBSqsvA&expected_price_source=share&expected_price_currency=twd&expected_price=12554",
      "preferred": false
     },
     {
@@ -1567,6 +1555,18 @@
      "return_transfers": 1,
      "link": "https://www.aviasales.com/search/TPE1102FUK15021?t=IT18023496001802361300000135TPEFUK18027243001802769300000810FUKOKATPE_ae73eedadc7649f07f7dbd8aeb1e599e_31619&search_date=15102026&expected_price_uuid=01a13f5c-94ab-8031-2416-43468962dad3&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=b8BgvvdAjj_QvEPOxNoxAA&expected_price_source=share&expected_price_currency=twd&expected_price=12200",
      "preferred": false
+    },
+    {
+     "price": 12215,
+     "airline": "IT",
+     "flight_number": "240",
+     "destination_airport": "FUK",
+     "departure_at": "2027-02-13T06:45:00+08:00",
+     "return_at": "2027-02-18T16:40:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1302FUK18021?t=AK18025011001802512800000135TPEFUK18029688001802975400000170FUKTPE_6a35aec8d0ddad03ab888ed52391f30b_31101&search_date=17102026&expected_price_uuid=01a14b11-8063-8040-6f5a-d106741489e6&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=I-M0iWGHE4A2H1vciH0GoA&expected_price_source=share&expected_price_currency=twd&expected_price=12215",
+     "preferred": false
     }
    ]
   },
@@ -2551,18 +2551,6 @@
      "return_transfers": 0,
      "link": "https://www.aviasales.com/search/TPE2807OKA01081?t=VZ18167865001816795200000085TPEOKA18171444001817146500000095OKATPE_879c81f92adc6e4420808efd0ac61130_21020&search_date=16102026&expected_price_uuid=01a145ae-ec8f-8030-6d43-61d149e06178&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=b5_NJs4RUCpyUs92br2Wyw&expected_price_source=share&expected_price_currency=twd&expected_price=8209",
      "preferred": false
-    },
-    {
-     "price": 8918,
-     "airline": "VZ",
-     "flight_number": "568",
-     "destination_airport": "OKA",
-     "departure_at": "2027-07-15T14:55:00+08:00",
-     "return_at": "2027-07-21T16:55:00+09:00",
-     "transfers": 0,
-     "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE1507OKA21071?t=FD18156633001815672000000085TPEOKA18161889001816191000000095OKATPE_cdc8cf21e0eea9645bfba711cfadbbe2_23762&search_date=10102026&expected_price_uuid=01a126b9-4270-8040-ab42-aaf79cff078c&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=uXBRR1DifW2rP1gwo-KUiw&expected_price_source=share&expected_price_currency=twd&expected_price=8918",
-     "preferred": false
     }
    ]
   },
@@ -3406,7 +3394,7 @@
   }
  ],
  "api_usage": {
-  "checked_at": "2026-10-17T23:30+08:00",
+  "checked_at": "2026-10-18T04:33+08:00",
   "serpapi": {
    "plan_name": "Free Plan",
    "plan_renewal_date": "2026-10-18",
@@ -3416,7 +3404,7 @@
    "extra_credits": 0,
    "account_rate_limit_per_hour": 250
   },
-  "serpapi_calls_this_run": 8,
+  "serpapi_calls_this_run": 0,
   "serpapi_planned_per_month": 240,
   "travelpayouts_calls_this_run": 72
  }
