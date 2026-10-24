@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-24T23:54+08:00",
+ "updated_at": "2026-10-25T04:44+08:00",
  "currency": "twd",
  "routes": [
   {
@@ -1585,20 +1585,7 @@
    "label": "2027-02",
    "kind": "month",
    "target_price": 6500,
-   "offers": [
-    {
-     "price": 12215,
-     "airline": "IT",
-     "flight_number": "240",
-     "destination_airport": "FUK",
-     "departure_at": "2027-02-13T06:45:00+08:00",
-     "return_at": "2027-02-18T16:40:00+09:00",
-     "transfers": 0,
-     "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE1302FUK18021?t=AK18025011001802512800000135TPEFUK18029688001802975400000170FUKTPE_6a35aec8d0ddad03ab888ed52391f30b_31101&search_date=17102026&expected_price_uuid=01a14b11-8063-8040-6f5a-d106741489e6&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=I-M0iWGHE4A2H1vciH0GoA&expected_price_source=share&expected_price_currency=twd&expected_price=12215",
-     "preferred": false
-    }
-   ]
+   "offers": []
   },
   {
    "key": "TPE-FUK-2027-03",
@@ -2196,18 +2183,6 @@
    "target_price": 4500,
    "offers": [
     {
-     "price": 4687,
-     "airline": "IT",
-     "flight_number": "232",
-     "destination_airport": "OKA",
-     "departure_at": "2026-11-18T18:20:00+08:00",
-     "return_at": "2026-11-25T21:30:00+09:00",
-     "transfers": 0,
-     "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE1811OKA25111?t=IT17950260001795034400000080TPEOKA17956422001795644600000100OKATPE_3bd100dfa43a3806eb20cdf830fc44cf_11600&search_date=23102026&expected_price_uuid=01a16a83-eff7-8040-248e-841e83b397fa&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=fFUH7H295XbBW5360X5t8g&expected_price_source=share&expected_price_currency=twd&expected_price=4687",
-     "preferred": false
-    },
-    {
      "price": 4749,
      "airline": "FD",
      "flight_number": "230",
@@ -2217,6 +2192,18 @@
      "transfers": 0,
      "return_transfers": 0,
      "link": "https://www.aviasales.com/search/TPE0511OKA12111?t=IT17938854001793894100000085TPEOKA17944767001794478800000095OKATPE_cdf739ff9241fba422996b55f8a891e9_12093&search_date=21102026&expected_price_uuid=01a15cad-e633-8040-2719-8113a9a94b6e&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=ICcnxYzk4LejrN9sZLB3tQ&expected_price_source=share&expected_price_currency=twd&expected_price=4749",
+     "preferred": false
+    },
+    {
+     "price": 4787,
+     "airline": "IT",
+     "flight_number": "232",
+     "destination_airport": "OKA",
+     "departure_at": "2026-11-18T18:20:00+08:00",
+     "return_at": "2026-11-25T09:45:00+09:00",
+     "transfers": 0,
+     "return_transfers": 0,
+     "link": "https://www.aviasales.com/search/TPE1811OKA25111?t=IT17950260001795034400000080TPEOKA17955999001795602000000095OKATPE_2b564f08c2abe045bddb7a01400033e1_11800&search_date=24102026&expected_price_uuid=01a16fa6-7f80-8040-6fe9-2f7014677f3c&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=o4-ceU5zTGT4r7ZhZm815g&expected_price_source=share&expected_price_currency=twd&expected_price=4787",
      "preferred": false
     },
     {
@@ -3504,7 +3491,7 @@
   }
  ],
  "api_usage": {
-  "checked_at": "2026-10-24T23:54+08:00",
+  "checked_at": "2026-10-25T04:44+08:00",
   "serpapi": {
    "plan_name": "Free Plan",
    "plan_renewal_date": "2026-11-18",
