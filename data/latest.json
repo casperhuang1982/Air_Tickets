@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T03:21+08:00",
+ "updated_at": "2026-11-07T13:54+08:00",
  "currency": "twd",
  "routes": [
   {
@@ -257,7 +257,7 @@
      "preferred": false
     },
     {
-     "price": 8626,
+     "price": 8642,
      "airline": "MM",
      "flight_number": "628",
      "destination_airport": "NRT",
@@ -265,7 +265,7 @@
      "return_at": "2026-12-13T05:00:00+09:00",
      "transfers": 0,
      "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE0512TYO13121?t=IT17964909001796506200000195TPENRT17971380001797148500000235HNDTPE_49e2a2d95091c307259a9064ba52cbde_21511&search_date=06112026&expected_price_uuid=01a1b008-3a2b-8040-a3d3-ecd00c6ace2b&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=2Y-jGyurmYD5qBRzzQx2gQ&expected_price_source=share&expected_price_currency=twd&expected_price=8626",
+     "link": "https://www.aviasales.com/search/TPE0512TYO13121?t=IT17964909001796506200000195TPENRT17971380001797148500000235HNDTPE_49e2a2d95091c307259a9064ba52cbde_21511&search_date=06112026&expected_price_uuid=01a1b008-3a2b-8040-a3d3-ecd00c6ace2b&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=2Y-jGyurmYD5qBRzzQx2gQ&expected_price_source=share&expected_price_currency=twd&expected_price=8642",
      "preferred": false
     },
     {
@@ -281,7 +281,7 @@
      "preferred": false
     },
     {
-     "price": 9037,
+     "price": 9054,
      "airline": "MM",
      "flight_number": "930",
      "destination_airport": "NRT",
@@ -289,7 +289,7 @@
      "return_at": "2026-12-18T13:00:00+09:00",
      "transfers": 1,
      "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE1112TYO18121?t=IT17970132001797069300000875TPEOKANRT17975988001797611100000265NRTTPE_255296cca7bcb205da4282ca4a376a41_22599&search_date=06112026&expected_price_uuid=01a1b0fe-7d8c-8040-221e-de4cf3cb7a00&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=l0CNYHlMEInrUm7cQ_1gAQ&expected_price_source=share&expected_price_currency=twd&expected_price=9037",
+     "link": "https://www.aviasales.com/search/TPE1112TYO18121?t=IT17970132001797069300000875TPEOKANRT17975988001797611100000265NRTTPE_255296cca7bcb205da4282ca4a376a41_22599&search_date=06112026&expected_price_uuid=01a1b0fe-7d8c-8040-221e-de4cf3cb7a00&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=l0CNYHlMEInrUm7cQ_1gAQ&expected_price_source=share&expected_price_currency=twd&expected_price=9054",
      "preferred": false
     },
     {
@@ -400,7 +400,7 @@
      "preferred": false
     },
     {
-     "price": 9384,
+     "price": 9402,
      "airline": "VZ",
      "flight_number": "568",
      "destination_airport": "NRT",
@@ -408,7 +408,7 @@
      "return_at": "2027-01-18T05:00:00+09:00",
      "transfers": 1,
      "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE1101TYO18011?t=IT17996787001799765100001380TPEOKANRT18002484001800258900000235HNDTPE_17276453d5276f82333a439b7cd7d7c8_23472&search_date=06112026&expected_price_uuid=01a1b165-9077-8031-67cb-77e264535afd&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=F0L3DZ9PjfqN21lmy9IgZA&expected_price_source=share&expected_price_currency=twd&expected_price=9384",
+     "link": "https://www.aviasales.com/search/TPE1101TYO18011?t=IT17996787001799765100001380TPEOKANRT18002484001800258900000235HNDTPE_17276453d5276f82333a439b7cd7d7c8_23472&search_date=06112026&expected_price_uuid=01a1b165-9077-8031-67cb-77e264535afd&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=F0L3DZ9PjfqN21lmy9IgZA&expected_price_source=share&expected_price_currency=twd&expected_price=9402",
      "preferred": false
     },
     {
@@ -424,15 +424,15 @@
      "preferred": false
     },
     {
-     "price": 9439,
-     "airline": "GK",
-     "flight_number": "014",
+     "price": 9804,
+     "airline": "VZ",
+     "flight_number": "568",
      "destination_airport": "NRT",
-     "departure_at": "2027-01-13T12:50:00+08:00",
-     "return_at": "2027-01-17T05:45:00+09:00",
-     "transfers": 0,
+     "departure_at": "2027-01-13T14:45:00+08:00",
+     "return_at": "2027-01-17T05:00:00+09:00",
+     "transfers": 1,
      "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE1301TYO17011?t=MM17998446001799859300000185TPENRT18001647001800176100000250HNDTPE_a7601b6d62d03da7a8cbc7cf2498aeee_23443&search_date=03112026&expected_price_uuid=01a1a0cb-6bfa-8040-283b-6d3fb2131837&static_fare_key=TY%7CP1_JW%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=3drls5SjjfkKxgfM4HRdlg&expected_price_source=share&expected_price_currency=twd&expected_price=9439",
+     "link": "https://www.aviasales.com/search/TPE1301TYO17011?t=IT17998515001799879100000400TPEOKANRT18001620001800172500000235HNDTPE_279d6f9c6690a6f1b300996c0eb4a647_24506&search_date=07112026&expected_price_uuid=01a1b461-5d00-8031-2e55-e0a8c73a75e0&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=mqrr7N514ylkE37c3I47tw&expected_price_source=share&expected_price_currency=twd&expected_price=9804",
      "preferred": false
     },
     {
@@ -647,7 +647,7 @@
    "target_price": 6000,
    "offers": [
     {
-     "price": 8808,
+     "price": 8825,
      "airline": "IT",
      "flight_number": "202",
      "destination_airport": "NRT",
@@ -655,7 +655,7 @@
      "return_at": "2027-06-15T05:25:00+09:00",
      "transfers": 0,
      "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE1106TYO15061?t=IT18127239001812738900000190TPENRT18130371001813046400000215HNDTPE_6323795b84ad31b732ac293429338937_22031&search_date=06112026&expected_price_uuid=01a1b16d-8c4c-8030-6bf5-759e8b501d90&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=ZI3D-v7xWySAADbpIvlubw&expected_price_source=share&expected_price_currency=twd&expected_price=8808",
+     "link": "https://www.aviasales.com/search/TPE1106TYO15061?t=IT18127239001812738900000190TPENRT18130371001813046400000215HNDTPE_6323795b84ad31b732ac293429338937_22031&search_date=06112026&expected_price_uuid=01a1b16d-8c4c-8030-6bf5-759e8b501d90&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=ZI3D-v7xWySAADbpIvlubw&expected_price_source=share&expected_price_currency=twd&expected_price=8825",
      "preferred": false
     }
    ]
@@ -670,7 +670,7 @@
    "target_price": 6000,
    "offers": [
     {
-     "price": 9921,
+     "price": 9940,
      "airline": "IT",
      "flight_number": "202",
      "destination_airport": "NRT",
@@ -678,7 +678,7 @@
      "return_at": "2027-07-10T05:25:00+09:00",
      "transfers": 0,
      "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE0707TYO10071?t=IT18149703001814985300000190TPENRT18151971001815206400000215HNDTPE_f4464e0e0643767896e964ef94a59b61_24854&search_date=06112026&expected_price_uuid=01a1b1ba-3f6c-8030-6760-b0b7cec5ad57&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=0S48kelFlID2UOxW45Z76w&expected_price_source=share&expected_price_currency=twd&expected_price=9921",
+     "link": "https://www.aviasales.com/search/TPE0707TYO10071?t=IT18149703001814985300000190TPENRT18151971001815206400000215HNDTPE_f4464e0e0643767896e964ef94a59b61_24854&search_date=06112026&expected_price_uuid=01a1b1ba-3f6c-8030-6760-b0b7cec5ad57&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=0S48kelFlID2UOxW45Z76w&expected_price_source=share&expected_price_currency=twd&expected_price=9940",
      "preferred": false
     }
    ]
@@ -1528,7 +1528,7 @@
      "preferred": false
     },
     {
-     "price": 8650,
+     "price": 8666,
      "airline": "IT",
      "flight_number": "720",
      "destination_airport": "FUK",
@@ -1536,7 +1536,7 @@
      "return_at": "2026-12-18T10:55:00+09:00",
      "transfers": 0,
      "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE1412FUK18121?t=IT17972556001797267300000135TPEFUK17975913001797597600000165FUKTPE_37a819111ffcf330701b8490f94b27c8_21636&search_date=06112026&expected_price_uuid=01a1b15f-a251-8040-2cad-b60944ef32c9&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=w-9SvTN-2WU3Hq0dszO8Vg&expected_price_source=share&expected_price_currency=twd&expected_price=8650",
+     "link": "https://www.aviasales.com/search/TPE1412FUK18121?t=IT17972556001797267300000135TPEFUK17975913001797597600000165FUKTPE_37a819111ffcf330701b8490f94b27c8_21636&search_date=06112026&expected_price_uuid=01a1b15f-a251-8040-2cad-b60944ef32c9&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=w-9SvTN-2WU3Hq0dszO8Vg&expected_price_source=share&expected_price_currency=twd&expected_price=8666",
      "preferred": false
     },
     {
@@ -2405,7 +2405,7 @@
      "preferred": false
     },
     {
-     "price": 9118,
+     "price": 9135,
      "airline": "MM",
      "flight_number": "930",
      "destination_airport": "OKA",
@@ -2413,11 +2413,11 @@
      "return_at": "2027-02-13T08:15:00+09:00",
      "transfers": 0,
      "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE0902OKA13021?t=MM18021972001802206200000090TPEOKA18025065001802508900000100OKATPE_5d73b50866a068bd313c2a89a8075a69_22787&search_date=06112026&expected_price_uuid=01a1b054-b5ca-8040-a30c-28149bda55f6&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=_wdccK7w_kzQnqNVp8cPKQ&expected_price_source=share&expected_price_currency=twd&expected_price=9118",
+     "link": "https://www.aviasales.com/search/TPE0902OKA13021?t=MM18021972001802206200000090TPEOKA18025065001802508900000100OKATPE_5d73b50866a068bd313c2a89a8075a69_22787&search_date=06112026&expected_price_uuid=01a1b054-b5ca-8040-a30c-28149bda55f6&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=_wdccK7w_kzQnqNVp8cPKQ&expected_price_source=share&expected_price_currency=twd&expected_price=9135",
      "preferred": false
     },
     {
-     "price": 12065,
+     "price": 12087,
      "airline": "NU",
      "flight_number": "302",
      "destination_airport": "OKA",
@@ -2425,7 +2425,7 @@
      "return_at": "2027-02-07T08:15:00+09:00",
      "transfers": 0,
      "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE0302OKA07021?t=MM18016497001801658700000090TPEOKA18019881001801990500000100OKATPE_38e1bd3110e70726a344d4cd843abeb6_30152&search_date=06112026&expected_price_uuid=01a1b065-9e06-8040-6fb3-457db9dad4c5&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=f8qW6KAAM6KmjZT76H2kfg&expected_price_source=share&expected_price_currency=twd&expected_price=12065",
+     "link": "https://www.aviasales.com/search/TPE0302OKA07021?t=MM18016497001801658700000090TPEOKA18019881001801990500000100OKATPE_38e1bd3110e70726a344d4cd843abeb6_30152&search_date=06112026&expected_price_uuid=01a1b065-9e06-8040-6fb3-457db9dad4c5&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=f8qW6KAAM6KmjZT76H2kfg&expected_price_source=share&expected_price_currency=twd&expected_price=12087",
      "preferred": false
     },
     {
@@ -2831,18 +2831,11 @@
    "target_price": null,
    "dates": [
     {
-     "depart": "2026-11-07",
-     "return": "2026-11-11",
-     "best": 11241,
-     "pref": null,
-     "level": "typical"
-    },
-    {
      "depart": "2026-11-14",
      "return": "2026-11-18",
-     "best": 12691,
+     "best": 14142,
      "pref": null,
-     "level": "typical"
+     "level": "high"
     },
     {
      "depart": "2026-11-21",
@@ -2854,12 +2847,12 @@
     {
      "depart": "2026-11-28",
      "return": "2026-12-02",
-     "best": 11310,
+     "best": 11282,
      "pref": null,
      "level": "typical"
     }
    ],
-   "checked_at": "2026-11-03T08:55+08:00",
+   "checked_at": "2026-11-07T13:54+08:00",
    "source": "google",
    "refresh_days": 4,
    "offers": [
@@ -2878,21 +2871,21 @@
      "preferred": false
     },
     {
-     "price": 11241,
+     "price": 11282,
      "airline": "香港快運航空",
-     "flight_number": "UO 111, UO 684",
+     "flight_number": "UO 117, UO 684",
      "destination_airport": "NGO",
-     "departure_at": "2026-11-07T13:55",
-     "return_at": "2026-11-11",
+     "departure_at": "2026-11-28T21:15",
+     "return_at": "2026-12-02",
      "transfers": 1,
      "return_transfers": null,
-     "duration_min": 1730,
-     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTExLTA3agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTEtMTFqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "duration_min": 1290,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTExLTI4agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTItMDJqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
      "source": "google",
      "preferred": false
     },
     {
-     "price": 11310,
+     "price": 11510,
      "airline": "樂桃航空",
      "flight_number": "MM 724",
      "destination_airport": "NGO",
@@ -2906,7 +2899,7 @@
      "preferred": false
     },
     {
-     "price": 11691,
+     "price": 12220,
      "airline": "台灣虎航",
      "flight_number": "IT 206",
      "destination_airport": "NGO",
@@ -2915,48 +2908,6 @@
      "transfers": 0,
      "return_transfers": null,
      "duration_min": 160,
-     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTExLTI4agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTItMDJqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
-     "source": "google",
-     "preferred": false
-    },
-    {
-     "price": 12691,
-     "airline": "台灣虎航",
-     "flight_number": "IT 206",
-     "destination_airport": "NGO",
-     "departure_at": "2026-11-14T08:45",
-     "return_at": "2026-11-18",
-     "transfers": 0,
-     "return_transfers": null,
-     "duration_min": 160,
-     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTExLTE0agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTEtMThqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
-     "source": "google",
-     "preferred": false
-    },
-    {
-     "price": 13020,
-     "airline": "樂桃航空",
-     "flight_number": "MM 724",
-     "destination_airport": "NGO",
-     "departure_at": "2026-11-14T02:55",
-     "return_at": "2026-11-18",
-     "transfers": 0,
-     "return_transfers": null,
-     "duration_min": 150,
-     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTExLTE0agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTEtMThqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
-     "source": "google",
-     "preferred": false
-    },
-    {
-     "price": 13333,
-     "airline": "真航空",
-     "flight_number": "LJ 172, LJ 289",
-     "destination_airport": "NGO",
-     "departure_at": "2026-11-28T12:40",
-     "return_at": "2026-12-02",
-     "transfers": 1,
-     "return_transfers": null,
-     "duration_min": 1190,
      "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTExLTI4agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTItMDJqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
      "source": "google",
      "preferred": false
@@ -2976,49 +2927,35 @@
      "preferred": false
     },
     {
-     "price": 14268,
+     "price": 14142,
+     "airline": "樂桃航空",
+     "flight_number": "MM 724",
+     "destination_airport": "NGO",
+     "departure_at": "2026-11-14T02:55",
+     "return_at": "2026-11-18",
+     "transfers": 0,
+     "return_transfers": null,
+     "duration_min": 150,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTExLTE0agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTEtMThqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "source": "google",
+     "preferred": false
+    },
+    {
+     "price": 14741,
      "airline": "日本航空",
      "flight_number": "JL 8670",
      "destination_airport": "NGO",
-     "departure_at": "2026-11-07T15:50",
-     "return_at": "2026-11-11",
+     "departure_at": "2026-11-14T15:50",
+     "return_at": "2026-11-18",
      "transfers": 0,
      "return_transfers": null,
      "duration_min": 155,
-     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTExLTA3agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTEtMTFqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTExLTE0agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTEtMThqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
      "source": "google",
      "preferred": false
     },
     {
-     "price": 14696,
-     "airline": "香港快運航空",
-     "flight_number": "UO 113, UO 684",
-     "destination_airport": "NGO",
-     "departure_at": "2026-11-07T14:50",
-     "return_at": "2026-11-11",
-     "transfers": 1,
-     "return_transfers": null,
-     "duration_min": 1675,
-     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTExLTA3agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTEtMTFqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
-     "source": "google",
-     "preferred": false
-    },
-    {
-     "price": 14953,
-     "airline": "真航空",
-     "flight_number": "LJ 578, LJ 731",
-     "destination_airport": "NGO",
-     "departure_at": "2026-11-21T02:40",
-     "return_at": "2026-11-25",
-     "transfers": 1,
-     "return_transfers": null,
-     "duration_min": 390,
-     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTExLTIxagcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTEtMjVqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
-     "source": "google",
-     "preferred": false
-    },
-    {
-     "price": 15195,
+     "price": 15025,
      "airline": "國泰航空",
      "flight_number": "CX 530",
      "destination_airport": "NGO",
@@ -3028,6 +2965,20 @@
      "return_transfers": null,
      "duration_min": 155,
      "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTExLTE0agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTEtMThqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "source": "google",
+     "preferred": false
+    },
+    {
+     "price": 15063,
+     "airline": "日本航空",
+     "flight_number": "JL 8670",
+     "destination_airport": "NGO",
+     "departure_at": "2026-11-21T15:50",
+     "return_at": "2026-11-25",
+     "transfers": 0,
+     "return_transfers": null,
+     "duration_min": 155,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTExLTIxagcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTEtMjVqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
      "source": "google",
      "preferred": false
     }
@@ -3052,7 +3003,7 @@
     {
      "depart": "2026-12-12",
      "return": "2026-12-16",
-     "best": 9540,
+     "best": 9940,
      "pref": null,
      "level": "typical"
     },
@@ -3066,17 +3017,17 @@
     {
      "depart": "2026-12-26",
      "return": "2026-12-30",
-     "best": 11985,
+     "best": 11810,
      "pref": null,
      "level": "typical"
     }
    ],
-   "checked_at": "2026-11-03T08:55+08:00",
+   "checked_at": "2026-11-07T13:54+08:00",
    "source": "google",
    "refresh_days": 4,
    "offers": [
     {
-     "price": 9540,
+     "price": 9940,
      "airline": "樂桃航空",
      "flight_number": "MM 724",
      "destination_airport": "NGO",
@@ -3118,49 +3069,21 @@
      "preferred": false
     },
     {
-     "price": 11985,
-     "airline": "樂桃航空",
-     "flight_number": "MM 724",
-     "destination_airport": "NGO",
-     "departure_at": "2026-12-26T02:55",
-     "return_at": "2026-12-30",
-     "transfers": 0,
-     "return_transfers": null,
-     "duration_min": 150,
-     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTEyLTI2agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTItMzBqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
-     "source": "google",
-     "preferred": false
-    },
-    {
-     "price": 12391,
+     "price": 11710,
      "airline": "台灣虎航",
      "flight_number": "IT 206",
      "destination_airport": "NGO",
-     "departure_at": "2026-12-19T08:45",
-     "return_at": "2026-12-23",
+     "departure_at": "2026-12-12T08:45",
+     "return_at": "2026-12-16",
      "transfers": 0,
      "return_transfers": null,
      "duration_min": 160,
-     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTEyLTE5agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTItMjNqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTEyLTEyagcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTItMTZqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
      "source": "google",
      "preferred": false
     },
     {
-     "price": 12594,
-     "airline": "台灣虎航",
-     "flight_number": "IT 206",
-     "destination_airport": "NGO",
-     "departure_at": "2026-12-05T08:45",
-     "return_at": "2026-12-09",
-     "transfers": 0,
-     "return_transfers": null,
-     "duration_min": 160,
-     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTEyLTA1agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTItMDlqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
-     "source": "google",
-     "preferred": false
-    },
-    {
-     "price": 12791,
+     "price": 11810,
      "airline": "台灣虎航",
      "flight_number": "IT 206",
      "destination_airport": "NGO",
@@ -3174,7 +3097,35 @@
      "preferred": false
     },
     {
-     "price": 12931,
+     "price": 12110,
+     "airline": "樂桃航空",
+     "flight_number": "MM 724",
+     "destination_airport": "NGO",
+     "departure_at": "2026-12-26T02:55",
+     "return_at": "2026-12-30",
+     "transfers": 0,
+     "return_transfers": null,
+     "duration_min": 150,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTEyLTI2agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTItMzBqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "source": "google",
+     "preferred": false
+    },
+    {
+     "price": 12810,
+     "airline": "台灣虎航",
+     "flight_number": "IT 206",
+     "destination_airport": "NGO",
+     "departure_at": "2026-12-05T08:45",
+     "return_at": "2026-12-09",
+     "transfers": 0,
+     "return_transfers": null,
+     "duration_min": 160,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTEyLTA1agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTItMDlqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "source": "google",
+     "preferred": false
+    },
+    {
+     "price": 12979,
      "airline": "中華航空",
      "flight_number": "CI 150",
      "destination_airport": "NGO",
@@ -3188,58 +3139,58 @@
      "preferred": false
     },
     {
-     "price": 13333,
-     "airline": "真航空",
-     "flight_number": "LJ 172, LJ 289",
+     "price": 13010,
+     "airline": "台灣虎航",
+     "flight_number": "IT 206",
      "destination_airport": "NGO",
-     "departure_at": "2026-12-05T12:40",
-     "return_at": "2026-12-09",
-     "transfers": 1,
+     "departure_at": "2026-12-19T08:45",
+     "return_at": "2026-12-23",
+     "transfers": 0,
      "return_transfers": null,
-     "duration_min": 1190,
+     "duration_min": 160,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTEyLTE5agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTItMjNqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "source": "google",
+     "preferred": false
+    },
+    {
+     "price": 13262,
+     "airline": "中華航空",
+     "flight_number": "CI 150",
+     "destination_airport": "NGO",
+     "departure_at": "2026-12-05T17:15",
+     "return_at": "2026-12-09",
+     "transfers": 0,
+     "return_transfers": null,
+     "duration_min": 155,
      "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTEyLTA1agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTItMDlqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
      "source": "google",
      "preferred": false
     },
     {
-     "price": 13616,
-     "airline": "香港快運航空",
-     "flight_number": "UO 117, UO 684",
+     "price": 14063,
+     "airline": "日本航空",
+     "flight_number": "JL 8670",
      "destination_airport": "NGO",
-     "departure_at": "2026-12-12T21:15",
-     "return_at": "2026-12-16",
-     "transfers": 1,
-     "return_transfers": null,
-     "duration_min": 1290,
-     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTEyLTEyagcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTItMTZqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
-     "source": "google",
-     "preferred": false
-    },
-    {
-     "price": 14533,
-     "airline": "星宇航空",
-     "flight_number": "JX 838",
-     "destination_airport": "NGO",
-     "departure_at": "2026-12-26T14:55",
-     "return_at": "2026-12-30",
+     "departure_at": "2026-12-19T15:50",
+     "return_at": "2026-12-23",
      "transfers": 0,
      "return_transfers": null,
      "duration_min": 155,
-     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTEyLTI2agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTItMzBqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTEyLTE5agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTItMjNqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
      "source": "google",
      "preferred": false
     },
     {
-     "price": 14953,
-     "airline": "真航空",
-     "flight_number": "LJ 172, LJ 291",
+     "price": 14709,
+     "airline": "韓亞航空",
+     "flight_number": "OZ 714, OZ 122",
      "destination_airport": "NGO",
-     "departure_at": "2026-12-19T12:40",
-     "return_at": "2026-12-23",
+     "departure_at": "2026-12-26T17:05",
+     "return_at": "2026-12-30",
      "transfers": 1,
      "return_transfers": null,
-     "duration_min": 320,
-     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTEyLTE5agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTItMjNqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
+     "duration_min": 950,
+     "link": "https://www.google.com/travel/flights?hl=zh-TW&gl=tw&curr=TWD&tfs=CBwQAhonEgoyMDI2LTEyLTI2agcIARIDVFBFagcIARIDVFNBcgcIARIDTkdPGicSCjIwMjYtMTItMzBqBwgBEgNOR09yBwgBEgNUUEVyBwgBEgNUU0FAAUgBcAGYAQE&tfu=EgIIAQ",
      "source": "google",
      "preferred": false
     }
@@ -3255,7 +3206,7 @@
    "target_price": 10000,
    "offers": [
     {
-     "price": 8152,
+     "price": 8167,
      "airline": "MM",
      "flight_number": "724",
      "destination_airport": "NGO",
@@ -3263,11 +3214,11 @@
      "return_at": "2026-12-31T19:40:00+09:00",
      "transfers": 0,
      "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE2712NGO31121?t=IT17983401001798352700000150TPENGO17987460001798755300000215NGOTPE_c7d40201551476d1366a26f5d6418555_20390&search_date=06112026&expected_price_uuid=01a1b161-164d-8040-29ad-81be5e273bb9&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=ZSfWDWJ1IRz7COWHrw9tQA&expected_price_source=share&expected_price_currency=twd&expected_price=8152",
+     "link": "https://www.aviasales.com/search/TPE2712NGO31121?t=IT17983401001798352700000150TPENGO17987460001798755300000215NGOTPE_c7d40201551476d1366a26f5d6418555_20390&search_date=06112026&expected_price_uuid=01a1b161-164d-8040-29ad-81be5e273bb9&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=ZSfWDWJ1IRz7COWHrw9tQA&expected_price_source=share&expected_price_currency=twd&expected_price=8167",
      "preferred": false
     },
     {
-     "price": 8884,
+     "price": 8901,
      "airline": "IT",
      "flight_number": "206",
      "destination_airport": "NGO",
@@ -3275,7 +3226,7 @@
      "return_at": "2026-12-12T13:15:00+09:00",
      "transfers": 0,
      "return_transfers": 0,
-     "link": "https://www.aviasales.com/search/TPE0812NGO12121?t=IT17967195001796732700000160TPENGO17970813001797090600000215NGOTPE_e8064e3e0af319cb46b7bf85bc6a7058_22221&search_date=06112026&expected_price_uuid=01a1b162-6e37-8040-6ff7-8997d3190be0&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=dp3oOa4hD5mMX21joC93Kg&expected_price_source=share&expected_price_currency=twd&expected_price=8884",
+     "link": "https://www.aviasales.com/search/TPE0812NGO12121?t=IT17967195001796732700000160TPENGO17970813001797090600000215NGOTPE_e8064e3e0af319cb46b7bf85bc6a7058_22221&search_date=06112026&expected_price_uuid=01a1b162-6e37-8040-6ff7-8997d3190be0&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=dp3oOa4hD5mMX21joC93Kg&expected_price_source=share&expected_price_currency=twd&expected_price=8901",
      "preferred": false
     },
     {
@@ -3455,18 +3406,18 @@
   }
  ],
  "api_usage": {
-  "checked_at": "2026-11-07T03:21+08:00",
+  "checked_at": "2026-11-07T13:54+08:00",
   "serpapi": {
    "plan_name": "Free Plan",
    "plan_renewal_date": "2026-11-18",
    "searches_per_month": 250,
-   "plan_searches_left": 98,
-   "this_month_usage": 152,
+   "plan_searches_left": 91,
+   "this_month_usage": 159,
    "extra_credits": 0,
    "account_rate_limit_per_hour": 250
   },
-  "serpapi_calls_this_run": 6,
-  "serpapi_planned_per_month": 240,
+  "serpapi_calls_this_run": 7,
+  "serpapi_planned_per_month": 232,
   "travelpayouts_calls_this_run": 72
  }
 }
